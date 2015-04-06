@@ -1958,6 +1958,9 @@ function queryNotificationsSuccess(tx,result){
 
 
 function compareNotification(){
+	
+	console.log("Notification ===============");
+	
 	if(total_notificationcount < newtotal_notificationcount	)
 	{
 		console.log("statttttt = "+newtotal_notificationcount+"===<>=="+total_notificationcount);
@@ -2042,7 +2045,8 @@ function slectnotificationCB(tx,result){
 		var lengthselected = result.rows.length;
 
 		total_notificationcount=lengthselected;
-		alert('Length selected = '+total_notificationcount);
+		alert('Length selected ====== '+total_notificationcount);
+		console.log(total_notificationcount);
 		
 	}
 function errorslectnotificationCB(err)
