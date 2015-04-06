@@ -861,11 +861,14 @@ ul li.eventlist{
     <div data-role='content'>
 
         <ul class="rslides" id="slider1">
+
+
+<!--
             <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/courage@3x.png" ></li>
             <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/compassion@3x.png" ></li>
             <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/confidence@3x.png" ></li>
             <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/creativity@3x.png" ></li>
-        </ul>
+-->        </ul>
     
     <div>
        <div style="background-color:#E9A802 !important; width:100%; height:35px !important;">
@@ -1227,15 +1230,56 @@ var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000);
     $(function () {
 
       // Slideshow 1
-      $("#slider1").responsiveSlides({
-        maxwidth: 800,
-        speed: 800
-      });
+  callbanner();   
 	  
 //  checkConnection();       
   
   });
   
+  
+  function callbanner()
+  {
+  
+  var banner='';
+if(screenwidth == 320 && screenheight == 480)
+{
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/4s/1.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/4s/2.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/4s/3.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/4s/4.png" ></li>';
+	}else if(screenwidth == 320 && screenheight == 568){
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/5s/1.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/5s/2.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/5s/3.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/5s/4.png" ></li>';
+	}else if(screenwidth == 375 && screenheight == 667){
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/6/1.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/6/2.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/6/3.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/6/4.png" ></li>';
+	}else if(screenwidth == 414 && screenheight == 736){
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/6p/1.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/6p/2.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/6p/3.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/6p/4.png" ></li>';
+	}
+  
+if(banner!='')
+{
+	$('#slider1').html('');
+	$('#slider1').html(banner);
+	
+	 $("#slider1").responsiveSlides({
+        maxwidth: 800,
+        speed: 800
+      });
+	
+	
+	}
+  
+  
+  
+  }
   
         // device APIs are available
  
@@ -1908,7 +1952,7 @@ function localfailcountCB(err)
 	}
 function local_successcountCB(tx,result){
 		newtotal_notificationcount=result.rows.length;
-		//console.log("newtotal_notificationcount = "+newtotal_notificationcount);
+		console.log("newtotal_notificationcount = "+newtotal_notificationcount);
 	} 	
 	
 	
