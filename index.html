@@ -1241,6 +1241,9 @@ var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000);
   {
   
   var banner='';
+  
+  var screenwidth=window.screen.width;
+  var screenheight=window.screen.height;
 if(screenwidth == 320 && screenheight == 480)
 {
   banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/4s/1.png" ></li>';
@@ -1266,6 +1269,8 @@ if(screenwidth == 320 && screenheight == 480)
   
 if(banner!='')
 {
+	
+	alert(banner);
 	$('#slider1').html('');
 	$('#slider1').html(banner);
 	
@@ -1275,7 +1280,10 @@ if(banner!='')
       });
 	
 	
-	}
+	}else{
+		
+		alert(banner);
+		}
   
   
   
