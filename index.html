@@ -1213,7 +1213,8 @@ var imagepath = 'http://www.safelearners.com/aisc/';
 var event_read_array=[];
 var event_read_list='';
 var imageuri;
-	
+var total_notificationcount;	
+var newtotal_notificationcount;	
 var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000); //will create database Dummy_DB or open it		
 	
 	
@@ -1891,7 +1892,23 @@ function successNotificationsCB() {
 function queryNotificationsDB(tx){
 	var value ='1';
 tx.executeSql('SELECT * FROM notifications where status=? order by id desc',[value],queryNotificationsSuccess,errorNotificationsCB);
+tx.executeSql('SELECT disctinct(notifications_id), * FROM notifications',[],local_successcountCB,localfailcountCB);
+
 }
+
+function localfailcountCB(err)
+{
+	alert("Error localfailcount"+err.message);
+	}
+function local_successcountCB(tx,result){
+		newtotal_notificationcount=result.rows.length;
+		console.log("newtotal_notificationcount = "+newtotal_notificationcount);
+	} 	
+	
+	
+	
+	
+	
 
 
 function errorNotificationsCB(err){
@@ -1901,11 +1918,8 @@ function errorNotificationsCB(err){
 
 function queryNotificationsSuccess(tx,result){
 		var length = result.rows.length;
-		
-		
-	//	alert("Notifications LENGTH  = "+ length);
-		
-		var Notificationsappend='';
+		//	alert("Notifications LENGTH  = "+ length);
+			var Notificationsappend='';
 			if(length >0)
 			{
 			$('#Notifications_id').html('');	
@@ -1930,6 +1944,7 @@ function queryNotificationsSuccess(tx,result){
 		$('#Notifications_id').trigger("create");
 		$('#Notifications_id').listview().listview('refresh');		
 				
+			compareNotification();	
 			}//if close
 			else{
 				 if(navigator.network.connection.type == Connection.NONE){
@@ -1942,7 +1957,14 @@ function queryNotificationsSuccess(tx,result){
 
 
 
-
+function compareNotification(){
+	if(total_notificationcount < newtotal_notificationcount	)
+	{
+		console.log("statttttt = "+newtotal_notificationcount+"===<>=="+total_notificationcount);
+		$.mobile.changePage('#notifications');
+		}
+	
+	}
 function loadNotificationsfromserver()
 {
 	db.transaction(populateNotificationsDB, errorNotificationsCB, successNotificationsCBServer);
@@ -1965,7 +1987,7 @@ function successNotificationsCBServer(){
 	crossDomain: true,
 	success: function(data)
 	{
-	
+	getlastnotificationdata();
 	deleteNotifications_data();	
 //	alert('evennts loaded');
 	//	alert(data.status.code);
@@ -2008,7 +2030,23 @@ function insertNotificationsvalues(tx,parameter1,parameter2,parameter3,parameter
 
 
 
+function getlastnotificationdata()
+{
+	db.transaction(function(tx){
+				var value='1';
+				var cond='0';
+        		tx.executeSql("select distinct(notifications_id) * from notifications ;",[],slectnotificationCB,errorslectnotificationCB);
+		},ErrordeletteCB);	 
+	}
 
+
+function slectnotificationCB(tx,result){
+		var lengthselected = result.rows.length;
+
+		total_notificationcount=lengthselected;
+		alert('Length selected = '+total_notificationcount);
+		
+	}
 
 
 function deleteNotifications_data()
