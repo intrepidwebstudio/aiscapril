@@ -1314,7 +1314,7 @@ function queryContactSuccess(tx,result){
 		
 	//	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
 		
-		console.log("Imahe ="+imagepath+image+" Name = "+name +" contact email "+ contactemail +" status = "+ status);
+		//console.log("Imahe ="+imagepath+image+" Name = "+name +" contact email "+ contactemail +" status = "+ status);
 		
 		contactappend+='<center><div class="contactsimagetop examplecolor" style="width:95%;"><div style="float:left; width:20% !important;">';
 		
@@ -1360,7 +1360,7 @@ function ErrorDeleteCallBack(err){
 	} 
 function successContactCBServer(){
 //	alert('adasda !!!!');
-	console.log(ajaxpath+'loadcontacts.php?AppTokenId='+AppTokenId);
+	//console.log(ajaxpath+'loadcontacts.php?AppTokenId='+AppTokenId);
 	$.support.cors = true;
 	$.ajax({
 	url:ajaxpath+'loadcontacts.php?AppTokenId='+AppTokenId,
@@ -1483,7 +1483,7 @@ function queryEventsSuccess(tx,result){
 		var readstatus = result.rows.item(i).readstatus;
 		var event_id = result.rows.item(i).event_id;
 		
-		console.log("Event name ="+eventname+" datetime  "+datetime +'REaD Statuds = '+readstatus );
+		//console.log("Event name ="+eventname+" datetime  "+datetime +'REaD Statuds = '+readstatus );
 		
 		var value_id = 'event'+event_id;
 		
@@ -1532,10 +1532,10 @@ function successEventsCBServer(){
 	
 //	alert('adasda !!!!');
 	
-	console.log(ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list);
+	//console.log(ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list);
 	
-	console.log("event_read_list  = "+event_read_list);
-	console.log(" event_read_list arraay length = "+ event_read_array.length );
+	//console.log("event_read_list  = "+event_read_list);
+	//console.log(" event_read_list arraay length = "+ event_read_array.length );
 	
 	if(event_read_array.length>0)
 	{
@@ -1544,7 +1544,7 @@ function successEventsCBServer(){
 	event_read_list ='0';
 		}
 	
-	console.log("event_read_list  = "+event_read_list);	
+	//console.log("event_read_list  = "+event_read_list);	
 		
 	
 	$.support.cors = true;
@@ -1719,7 +1719,7 @@ function queryNewsletterSuccess(tx,result){
 		var newsurl = result.rows.item(i).newsurl;
 		var color = result.rows.item(i).color;
 		
-		console.log("name ="+name+" department  "+department +'newsimage = '+newsimage +' Newsurl = '+newsurl );
+		//console.log("name ="+name+" department  "+department +'newsimage = '+newsimage +' Newsurl = '+newsurl );
 
 
 Newsletterappend+='<li onclick=loadurl(\''+newsurl+'\') class="newslettericons" >';
@@ -1764,7 +1764,7 @@ function successNewsletterCBServer(){
 	
 //	alert('adasda !!!!');
 	
-	console.log(ajaxpath+'loadnewsletter.php?AppTokenId='+AppTokenId);
+	//console.log(ajaxpath+'loadnewsletter.php?AppTokenId='+AppTokenId);
 		
 	$.support.cors = true;
 	$.ajax({
@@ -1908,7 +1908,7 @@ function localfailcountCB(err)
 	}
 function local_successcountCB(tx,result){
 		newtotal_notificationcount=result.rows.length;
-		console.log("newtotal_notificationcount = "+newtotal_notificationcount);
+		//console.log("newtotal_notificationcount = "+newtotal_notificationcount);
 	} 	
 	
 	
@@ -1936,7 +1936,7 @@ function queryNotificationsSuccess(tx,result){
 		var notifications =	result.rows.item(i).notifications;
 		var	datetime =result.rows.item(i).datetime;
 		
-		console.log("notifications ="+notifications+" datetime  "+datetime );
+		//console.log("notifications ="+notifications+" datetime  "+datetime );
 
 		Notificationsappend+='<li style="padding-left:35px !important;">';
 		Notificationsappend+='<p style="color:#FFFFFF !important;" class="list">'+notifications+'</p>';
@@ -1966,14 +1966,14 @@ function queryNotificationsSuccess(tx,result){
 function compareNotification(){
 	
 	console.log("Notification ===============");
-	console.log("statttttt = "+newtotal_notificationcount+"===<>=="+total_notificationcount);
 	
-	if((total_notificationcount < newtotal_notificationcount)  )
+	if((total_notificationcount < newtotal_notificationcount) && total_notificationcount!=0 	)
 	{
 		console.log("statttttt = "+newtotal_notificationcount+"===<>=="+total_notificationcount);
 		$.mobile.changePage('#notification');
 		}else{
-			console.log("notification = "+total_notificationcount+" new notificationcount "+newtotal_notificationcount);
+			
+		console.log(' no notification');
 			}
 	
 	}
@@ -1987,7 +1987,7 @@ function successNotificationsCBServer(){
 	
 //	alert('adasda !!!!');
 	
-	console.log(ajaxpath+'loadnotifications.php?AppTokenId='+AppTokenId);
+	//console.log(ajaxpath+'loadnotifications.php?AppTokenId='+AppTokenId);
 		
 	$.support.cors = true;
 	$.ajax({
@@ -2055,7 +2055,7 @@ function slectnotificationCB(tx,result){
 
 		total_notificationcount=lengthselected;
 		alert('Length selected ====== '+total_notificationcount);
-		console.log(total_notificationcount);
+		//console.log(total_notificationcount);
 		
 	}
 function errorslectnotificationCB(err)
@@ -2159,10 +2159,10 @@ function querylinksSuccess(tx,result){
 		var links =	result.rows.item(i).links;
 		var	linkpage =result.rows.item(i).linkpage;
 		
-		console.log("links ="+links+" datetime  "+linkpage );
+		//console.log("links ="+links+" datetime  "+linkpage );
 		
 		
-		console.log(linkpage+' onclick '+links);
+		//console.log(linkpage+' onclick '+links);
 		
 		
 		$('#'+linkpage).attr('onclick','loadurl(\''+links+'\')' );
@@ -2218,7 +2218,7 @@ function successlinksCBServer(){
 	
 //	alert('adasda !!!!');
 	
-	console.log(ajaxpath+'loadlinks.php?AppTokenId='+AppTokenId);
+	//console.log(ajaxpath+'loadlinks.php?AppTokenId='+AppTokenId);
 		
 	$.support.cors = true;
 	$.ajax({
@@ -2344,7 +2344,7 @@ var datetime = $('#'+event_id).attr('data-value2');
 var readstatus = $('#'+event_id).attr('data-value3');
 
 
-console.log("Event Id = "+event_id+"Event tittle" +eventtitle + "Date time = " + datetime +"Read status =  "+ readstatus );
+//console.log("Event Id = "+event_id+"Event tittle" +eventtitle + "Date time = " + datetime +"Read status =  "+ readstatus );
 
 		var datetime_array = datetime.split(' ');
 		var date_array = datetime_array[0].split('-');
@@ -2408,16 +2408,16 @@ window.plugins.socialsharing.shareViaEmail(
 	 
  if(navigator.network.connection.type == Connection.NONE){
 	 
-		console.log(' intrenet not working'); 	 
+		//console.log(' intrenet not working'); 	 
 	 navigator.notification.alert("Yor phone does not currently have an intrenet connection. Please connect and try again.", alertCallback, "AISC", "OK"); 
  }else{
 	 	 
-		console.log(' password check ajax '); 
+		//console.log(' password check ajax '); 
 		 
 	 if(password!='' && password!=null)
 	 {
 		 
-		 console.log(ajaxpath+'newsletterpassword.php?AppTokenId='+AppTokenId+'&password='+password);
+		 //console.log(ajaxpath+'newsletterpassword.php?AppTokenId='+AppTokenId+'&password='+password);
 						$.support.cors = true;
 						$.ajax({
 						url:ajaxpath+'newsletterpassword.php?AppTokenId='+AppTokenId+'&password='+password,
