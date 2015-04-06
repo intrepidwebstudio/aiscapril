@@ -929,6 +929,37 @@ ul li.eventlist{
 	<div data-role="content">
             <div class="example-wrapper" data-iscroll>            
                 <ul id="events_id" data-role="listview"  data-divider="true" >
+                
+                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
+                        <p class="list" style="color:#000;">Aisc test event </p>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
+
+                
+                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
+                        <p class="list" style="color:#000;">Aisc test event </p>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
+
+                
+                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
+                        <p class="list" style="color:#000;">Aisc test event </p>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
+
+                
+                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
+                        <p class="list" style="color:#000;">Aisc test event </p>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
+
+                
+                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
+                        <p class="list" style="color:#000;">Aisc test event </p>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
+
+                
+                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
+                        <p class="list" style="color:#000;">Aisc test event </p>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
+
+
                 </ul>
             </div>    
  
@@ -1523,12 +1554,12 @@ function queryEventsSuccess(tx,result){
 		
 		if(readstatus=='1')
 		{
-		Eventsappend+='<li style="padding-left:35px !important; background-color: #ccc !important " onclick="addeventcalendar(\''+value_id+'\')" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
+		Eventsappend+='<li style="padding-left:35px !important; background-color: #ccc !important ;" onclick="addeventcalendar(\''+value_id+'\')" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
 			}
 		else{	
 		Eventsappend+='<li style="padding-left:35px !important;" onclick="addeventcalendar(\''+value_id+'\')" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
 		}
-		Eventsappend+='<p class="list" style="color:#000;">'+eventname+'</p>';
+		Eventsappend+='<p class="list" style="color:#000; font-size: 0.95em !important;  ">'+eventname+'</p>';
 		Eventsappend+='<p class="list eventcontenttext2" style="color:#000" ><strong>'+datetime+'</strong></p></li>';
 	
 			}
@@ -1973,7 +2004,7 @@ function queryNotificationsSuccess(tx,result){
 		//console.log("notifications ="+notifications+" datetime  "+datetime );
 
 		Notificationsappend+='<li style="padding-left:35px !important;">';
-		Notificationsappend+='<p style="color:#FFFFFF !important;" class="list">'+notifications+'</p>';
+		Notificationsappend+='<p style="color:#FFFFFF !important; font-size: 0.95em !important;  " class="list">'+notifications+'</p>';
 		Notificationsappend+='<p class="eventcontenttext2 lists" style="color:#FFFFFF !important" ><strong>'+datetime+'</strong></p></li>';
 	
 			}
