@@ -1154,7 +1154,7 @@ ul li.eventlist{
             Chennai-600 113, India<br />
             Tel: &ensp;91 44 22549000</p>
    
-   
+   <!----
  <script>
      if(navigator.network.connection.type != Connection.NONE){
 </script>
@@ -1166,7 +1166,7 @@ ul li.eventlist{
     
 	}
     </script> 
-    
+    --->
     
     
     </div>
@@ -1222,9 +1222,9 @@ var imagepath = 'http://www.safelearners.com/aisc/';
 var event_read_array=[];
 var event_read_list='';
 var imageuri;
-var total_notificationcount;	
-var newtotal_notificationcount;	
-var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000); //will create database Dummy_DB or open it		
+var total_notificationcount=0;	
+var newtotal_notificationcount=0;	
+//var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000); //will create database Dummy_DB or open it		
 	
 	
     $(function () {
@@ -1239,9 +1239,7 @@ var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000);
   
   function callbanner()
   {
-  
   var banner='';
-  
   var screenwidth=window.screen.width;
   var screenheight=window.screen.height;
 if(screenwidth == 320 && screenheight == 480)
@@ -1950,10 +1948,10 @@ function successNotificationsCB() {
 function queryNotificationsDB(tx){
 	var value ='1';
 tx.executeSql('SELECT * FROM notifications where status=? order by id desc',[value],queryNotificationsSuccess,errorNotificationsCB);
-tx.executeSql('SELECT distinct(notifications_id) FROM notifications',[],local_successcountCB,localfailcountCB);
+//tx.executeSql('SELECT distinct(notifications_id) FROM notifications',[],local_successcountCB,localfailcountCB);
 
 }
-
+/*
 function localfailcountCB(err)
 {
 	alert("Error localfailcount"+err.message);
@@ -1965,7 +1963,7 @@ function local_successcountCB(tx,result){
 	
 	
 	
-	
+	*/
 	
 
 
@@ -2019,7 +2017,7 @@ function compareNotification(){
 	
 	console.log("Notification ===============");
 	
-	console.log("statttttt = "+newtotal_notificationcount+"===<>=="+total_notificationcount);
+	console.log("statttttt = "+ newtotal_notificationcount +"===<>=="+total_notificationcount);
 	if((total_notificationcount < newtotal_notificationcount) && total_notificationcount>0 	)
 	{
 		
@@ -2063,6 +2061,9 @@ function successNotificationsCBServer(){
 		//		alert('14');
 
 			$.each(Response, function(index, element) {
+				
+				newtotal_notificationcount=newtotal_notificationcount+1;
+				
 				db.transaction( function(tx){ insertNotificationsvalues(tx, element.notifications_id, element.notification, element.datetime, element.status )}, ErrorCallBack );	
 			});
 				loadNotificationsFromLocalDb();
