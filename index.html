@@ -1966,12 +1966,15 @@ function queryNotificationsSuccess(tx,result){
 function compareNotification(){
 	
 	console.log("Notification ===============");
+	console.log("statttttt = "+newtotal_notificationcount+"===<>=="+total_notificationcount);
 	
-	if( (total_notificationcount < newtotal_notificationcount) && total_notificationcount!=0 	)
+	if((total_notificationcount < newtotal_notificationcount)  )
 	{
 		console.log("statttttt = "+newtotal_notificationcount+"===<>=="+total_notificationcount);
 		$.mobile.changePage('#notification');
-		}
+		}else{
+			console.log("notification = "+total_notificationcount+" new notificationcount "+newtotal_notificationcount);
+			}
 	
 	}
 function loadNotificationsfromserver()
