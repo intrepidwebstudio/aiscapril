@@ -36,7 +36,6 @@
 	}
 	
 	
-	
 	.ui-listview > li p.list {
 	font-size: .85em;
 	font-weight: normal;
@@ -1404,74 +1403,11 @@ function ErrorCallBack(err){
 
 function insertContactvalues(tx,parameter1,parameter2,parameter3,parameter4)
 {
-//	alert('121');
 	//alert(parameter1+'===='+parameter2+'===='+parameter3+'===='+parameter4);
-	
 	tx.executeSql('INSERT INTO contacts(name , contactemail , imagepath , status  ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
 	
  }
 
-
-/***=========================================================DOWNLOAD FILE SCRIPT=====================================================================================================***/
-	
- 
-
-          
-		  console.log(" window.requestFileSystem  =   ");
-		  
-		    function fileSystemSuccess(fileSystem) {
-
-               var uri = imageuri; // Get URL
-
-               var download_link = encodeURI(uri);
-
-               var path = download_link,
-               ext = path.substr(path.lastIndexOf('.') + 1); //Get extension of URL
-
-               var folder_name ='aisc_contact';// Get folder name
-               var file_name = 'newimageee'; //Get file name 
-
-               var directoryEntry = fileSystem.root; // to get root path to directory
-               directoryEntry.getDirectory(folder_name, { create: true, exclusive: false }, onDirectorySuccess, onDirectoryFail); // creating folder in sdcard
-               var rootdir = fileSystem.root;
-               var fp = rootdir.fullPath;
-
-
-          fp = fp + "/" + folder_name + "/" + file_name + "." + ext; // fullpath and name of the file which we want to give
-		  
-		  console.log('fp fp fp = '+fp);
-		  
-            // download function call
-            var fileTransfer = new FileTransfer();
-            //File download function with URL and local path
-            fileTransfer.download(download_link, fp,
-                    function (entry) {
-                        alert("download complete: " + entry.fullPath);
-
-                    },
-                 function (error) {
-                     alert("download error source " + error.source);
-                     alert("download error target " + error.target);
-                     alert("upload error code" + error.code);
-
-                 }
-            );
-
-        }
-        function onDirectorySuccess(parent) {
-            //alert(parent);
-        }
-
-        function onDirectoryFail(error) {
-            //Error while creating directory
-            alert("Unable to create new directory: " + error.code);
-        }
-
-        function fileSystemFail(evt) {
-            alert(evt.target.error.code);
-        }	
-	
-/***==============================================================================================================================================================***/
 
 
 
