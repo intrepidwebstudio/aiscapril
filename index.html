@@ -891,7 +891,7 @@ ul li.eventlist{
             <a href="#locateus"><img  class="customfooter" id="locateusicon" src="homeicons/LocateUs.png" /></a>
         </div>
         <div class="footerwidth" style="float:right;">
-            <a href="#notification" onclick="loadnotificationpage()"><img  class="customfooter" id="notification"  src="homeicons/notification.png" /></a>
+            <a href="#notification" onclick="loadnotificationpage()"><img  class="customfooter" id="notificationc"  src="homeicons/notification.png" /></a>
         </div>
 		<div style="clear:both;"></div>
     </div>
@@ -1964,7 +1964,7 @@ function compareNotification(){
 	if(total_notificationcount < newtotal_notificationcount	)
 	{
 		console.log("statttttt = "+newtotal_notificationcount+"===<>=="+total_notificationcount);
-		$.mobile.changePage('#notifications');
+		$.mobile.changePage('#notification');
 		}
 	
 	}
