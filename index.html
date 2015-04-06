@@ -1,0 +1,2542 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mobile Application</title>
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview-pull.css">	  
+
+
+<link rel="stylesheet" href="css/custom1.css" />
+<link rel="stylesheet" href="css/responsiveslides.css" />
+	<script> 
+	document.onreadystatechange = function(e)
+	{
+		if (document.readyState === 'complete')
+		{
+			
+			
+			}
+	};
+   </script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="childbrowser.js"></script>
+
+
+<style>
+		.example-wrapper, .example-wrapper div.iscroll-scroller {
+		width: 100% !important;
+		}
+.homeheader1{
+	
+	font-family:Arial, Helvetica, sans-serif !important;
+	
+	}
+	
+	
+	
+	.ui-listview > li p.list {
+	font-size: .85em;
+	font-weight: normal;
+	display: block !important;
+	margin: 0.6em 0 !important;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+
+ul li.eventlist{
+	padding:0em 1em !important;
+	}
+	
+.backbutton{
+		left: 10px !important;
+		position: relative !important;
+		top: 35% !important;
+		width: 20% !important;
+	}	
+	
+
+ @media only screen and (min-device-width: 320px) and (min-device-height: 480px) {
+	
+	/* Home */
+	
+	.sliderres{
+	
+		height:136px !important;
+		
+		}
+	
+.homeheader1{
+		background-color:#38549B;
+		color:white;
+		padding:14px;
+				
+	}
+	.homeimage1{
+	
+		max-height:145px !important; 
+		min-height:145px !important;
+		width:100% !important;
+	
+	}
+	.homeimage{
+	
+		max-height:70px !important; 
+		min-height:70px !important;
+		width:100% !important;
+	
+	}
+	.ui-content{
+		padding:0px !important;
+	}
+	
+	.homefooter{
+	
+		width:100% !important;
+		min-height:47px !important;
+		max-height:47px !important;
+	
+	}
+	
+	.yellowtext1{
+		width:100%;
+		background-color:#E9A802;
+		height:29px;
+	}
+	.yellowimage1{
+		padding:4px;
+		height:20px;
+	}
+	.yellowcontent1{
+		color:#000;
+		padding:4px;
+		float:right;
+	}
+	/* Eventpage */
+	.eventtop1{
+		width:100%; 
+		float:left;
+		background-color:#38549B;
+		color:white; 
+		min-height:48px;
+	}
+	.eventtopimage11{
+		margin-top:10px;
+		width:28%;
+		margin-left:6px;
+	}
+	.eventtoptext1{
+		margin-top:-27px;
+		margin-left:51px;
+	}
+	.eventtopimage22{
+	
+		margin-left: -6px;
+		margin-top: 7px;
+		width: 75%;
+	}
+	.eventcontenttext1{
+		font-size:13px;
+		text-align:center;
+		
+		}
+	.eventcontenttext2{
+		font-size:15px;
+		color:#718497;
+	}
+	/* Contacts,socialmedia,newsletter,locate us, notification header CSS */
+	.schoolheadertop{
+		background-color:#38549B;
+		height:48px;
+		}
+	.schoolheaderimage{
+		width:28px;
+		position:absolute;
+		margin-top:10px;
+	}
+	.schoolheadertext1{
+		margin-top:-33px;
+		margin-left:40px;
+		color:white;
+	}
+	.schoolheadertext2{
+		text-align:center;
+		margin-top:-24px;
+		color:white;
+		font-size:20px;
+	}
+	/* Contacts */
+	.contactsmain{
+		 height:52px;
+		 background-color:#D2D5D7;
+		 margin-right:7px;
+		 margin-top:18px;
+		 margin-left:7px;
+		 text-align:center;
+		 border-radius:2px;
+	  }
+	.contactsimagetop{
+		height:75px;
+		background-color:#D2D5D7;
+		margin-right:0px;
+		margin-top:11px;
+		margin-left:0px;
+		border-radius:2px;
+	}
+	.contactsimagetop1{
+		 height:75px;
+		 background-color:#D2D5D7;
+		 margin-right:7px;
+		 margin-top:30px;
+		 margin-left:7px;
+		 border-radius:2px;
+	}
+	.contactsimage{
+		width:100%;
+		height:65px;
+		margin-top:5px;
+		margin-left:7px; 
+		border-radius:40px;
+	}
+	/* Social Media */
+	.socialmediamain{
+		width:100%;
+	}
+	.socialmediaimage1{
+		margin-top:10px;
+		}
+	/* LocateUs */
+	locatecontentlabel{
+		width:75%;
+		margin-top:80px;
+	}
+	loctecontenttext1{
+		margin-left:46px;
+		margin-right:46px;
+		margin-top:60px;
+	}
+	locatecontenttext2{
+		float:left;
+		margin-top:-21px;
+		margin-left:-8px;
+	}
+	locatecontentimage{
+		width:19px;
+		margin-left:10px;
+		margin-top:-4px;
+	}
+	locatepara{
+		margin-top:20px;
+	}
+	rrrr{
+		margin-top:10% !important;
+		
+	}
+
+}
+
+@media  (min-device-width: 320px) and (min-device-height: 568px){
+	
+	/* Home */
+	
+	
+	.sliderres{
+	
+		height:229px !important;
+		
+		}
+	
+	.homeheader1{
+		background-color:#38549B;
+		color:white;
+		padding-top:18px;
+		padding-bottom:16px;
+	}
+	.homeimage1{
+	
+		max-height:225px !important; 
+		min-height:225px !important;
+		width:100% !important;
+	
+	}
+	.homeimage{
+	
+		max-height:69px !important; 
+		min-height:69px !important;
+		width:100% !important;
+	
+	}
+	.ui-content{
+		padding:0px !important;
+	}
+	
+	.homefooter{
+	
+		width:100% !important;
+		min-height:53px !important;
+		max-height:53px !important;
+	
+	}
+	
+	.yellowtext1{
+		width:100%;
+		background-color:#E9A802;
+		height:32px;
+	}
+	.yellowimage1{
+		padding:6px;
+		height:20px;
+	}
+	.yellowcontent1{
+		color:#000;
+		padding:4px;
+		float:right;
+	}
+	/* Eventpage */
+	.eventtop1{
+		width:100%; 
+		float:left;
+		background-color:#38549B;
+		color:white; 
+		min-height:53px;
+	}
+	.eventtopimage11{
+		margin-top:10px;
+		width:30%;
+		margin-left:6px;
+	}
+	.eventtoptext1{
+		margin-top:-27px;
+		margin-left:51px;
+	}
+	.eventtopimage22{
+	
+		margin-left: -6px;
+		margin-top: 7px;
+		width: 80%;
+	}
+	.eventcontenttext1{
+		font-size:13px;
+		text-align:center;
+		
+		}
+	.eventcontenttext2{
+		font-size:15px;
+		color:#718497;
+	}
+	/* Contacts,socialmedia,newsletter,locate us, notification header CSS */
+	.schoolheadertop{
+		background-color:#38549B;
+		height:53px;
+		}
+	.schoolheaderimage{
+		width:9%;
+		position:absolute;
+		margin-top:11px;
+	}
+	.schoolheadertext1{
+		margin-top:-37px;
+		margin-left:40px;
+		color:white;
+	}
+	.schoolheadertext2{
+		text-align:center;
+		margin-top:-24px;
+		color:white;
+		font-size:22px;
+	}
+	/* Contacts */
+	.contactsmain{
+		 height:52px;
+		 background-color:#D2D5D7;
+		 margin-right:7px;
+		 margin-top:20px;
+		 margin-left:7px;
+		 text-align:center;
+		 border-radius:2px;
+	  }
+	.contactsimagetop{
+		height:75px;
+		background-color:#D2D5D7;
+		margin-right:0px;
+		margin-top:11px;
+		margin-left:0px;
+		border-radius:2px;
+	}
+	.contactsimagetop1{
+		 height:75px;
+		 background-color:#D2D5D7;
+		 margin-right:7px;
+		 margin-top:30px;
+		 margin-left:7px;
+		 border-radius:2px;
+	}
+	.contactsimage{
+		width:100%;
+		height:65px;
+		margin-top:5px;
+		margin-left:7px; 
+		border-radius:40px;
+	}
+	/* Social Media */
+	.socialmediamain{
+		width:100%;
+	}
+	.socialmediaimage1{
+		margin-top:12px;
+		}
+	/* LocateUs */
+	locatecontentlabel{
+		width:75%;
+		margin-top:80px;
+	}
+	loctecontenttext1{
+		margin-left:46px;
+		margin-right:46px;
+		margin-top:60px;
+	}
+	locatecontenttext2{
+		float:left;
+		margin-top:-21px;
+		margin-left:-8px;
+	}
+	locatecontentimage{
+		width:19px;
+		margin-left:10px;
+		margin-top:-4px;
+	}
+	locateconentpara{
+		margin-top:25px;
+	}
+	rrrr{
+		margin-top:10% !important;
+		
+	}
+
+}
+
+@media (min-device-width: 375px) and (min-device-height: 667px){
+	/* Home */
+	
+	.sliderres{
+	
+		height:323px !important;
+		
+		}
+	
+	
+	
+	.homeheader1{
+		background-color:#38549B;
+		color:white;
+		padding:14px;
+		font-size:24px;
+	}
+	.homeimage1{
+	
+		max-height:223px !important; 
+		min-height:223px !important;
+		width:100% !important;
+	
+	}
+	.homeimage{
+	
+		max-height:95px !important; 
+		min-height:95px !important;
+		width:100% !important;
+	
+	}
+	.ui-content{
+		padding:0px !important;
+	}
+	
+	.homefooter{
+	
+		width:100% !important;
+		min-height:60px !important;
+		max-height:60px !important;
+	
+	}
+	
+	.yellowtext1{
+		width:100%;
+		background-color:#E9A802;
+		height:40px;
+	}
+	.yellowimage1{
+		padding:4px;
+		height:32px;
+	}
+	.yellowcontent1{
+		color:#000;
+		padding:9px;
+		float:right;
+	}
+	/* Eventpage */
+	.eventtop1{
+		width:100%; 
+		float:left;
+		background-color:#38549B;
+		color:white; 
+		min-height:60px;
+	}
+	.eventtopimage11{
+		margin-top:13px;
+		width:35%;
+		margin-left:6px;
+	}
+	.eventtoptext1{
+		margin-top:-31px;
+		margin-left:51px;
+		font-size:19px;
+	}
+	.eventtopimage22{
+	
+		margin-left: -6px;
+		margin-top: 13px;
+		width: 85%;
+	}
+	.eventcontenttext1{
+		font-size:13px;
+		text-align:center;
+		
+		}
+	.eventcontenttext2{
+		font-size:15px;
+		color:#718497;
+	}
+	/* Contacts,socialmedia,newsletter,locate us, notification header CSS */
+	.schoolheadertop{
+		background-color:#38549B;
+		height:60px;
+		}
+	.schoolheaderimage{
+		width:10%;
+		position:absolute;
+		margin-top:11px;
+	}
+	.schoolheadertext1{
+		margin-top:-40px;
+		margin-left:46px;
+		color:white;
+		font-size:19px;
+	}
+	.schoolheadertext2{
+		text-align:center;
+		margin-top:-28px;
+		color:white;
+		font-size:24px;
+	}
+	/* Contacts */
+	.contactsmain{
+		 height:52px;
+		 background-color:#D2D5D7;
+		 margin-right:7px;
+		 margin-top:22px;
+		 margin-left:7px;
+		 text-align:center;
+		 border-radius:2px;
+	  }
+	.contactsimagetop{
+		height:75px;
+		background-color:#D2D5D7;
+		margin-right:0px;
+		margin-top:11px;
+		margin-left:0px;
+		border-radius:2px;
+	}
+	.contactsimagetop1{
+		 height:75px;
+		 background-color:#D2D5D7;
+		 margin-right:7px;
+		 margin-top:30px;
+		 margin-left:7px;
+		 border-radius:2px;
+	}
+	.contactsimage{
+		width:100%;
+		height:65px;
+		margin-top:5px;
+		margin-left:7px; 
+		border-radius:40px;
+	}
+	/* Social Media */
+	.socialmediamain{
+		width:100%;
+	}
+	.socialmediaimage1{
+		margin-top:13px;
+		}
+	/* LocateUs */
+	locatecontentlabel{
+		width:75%;
+		margin-top:80px;
+	}
+	loctecontenttext1{
+		margin-left:46px;
+		margin-right:46px;
+		margin-top:60px;
+	}
+	locatecontenttext2{
+		float:left;
+		margin-top:-21px;
+		margin-left:-8px;
+	}
+	locatecontentimage{
+		width:19px;
+		margin-left:10px;
+		margin-top:-4px;
+	}
+	rrrr{
+		margin-top:10% !important;
+		
+	}
+
+}
+
+@media (min-device-width: 414px) and (min-device-height: 736px){
+	/* Home */
+	
+		.sliderres{
+	
+		height:392px !important;
+		
+		}
+
+	
+	
+	.homeheader1{
+		background-color:#38549B;
+		color:white;
+		padding:16px;
+		font-size:26px;
+	}
+	.homeimage1{
+	
+		max-height:258px !important; 
+		min-height:258px !important;
+		width:100% !important;
+	
+	}
+	.homeimage{
+	
+		max-height:100px !important; 
+		min-height:100px !important;
+		width:100% !important;
+	
+	}
+	.ui-content{
+		padding:0px !important;
+	}
+	
+	.homefooter{
+	
+		width:100% !important;
+		min-height:67px !important;
+		max-height:67px !important;
+	
+	}
+	
+	.yellowtext1{
+		width:100%;
+		background-color:#E9A802;
+		height:45px;
+	}
+	.yellowimage1{
+		padding:4px;
+		height:37px;
+	}
+	.yellowcontent1{
+		color:#000;
+		padding:12px;
+		float:right;
+	}
+	/* Eventpage */
+	.eventtop1{
+		width:100%; 
+		float:left;
+		background-color:#38549B;
+		color:white; 
+		min-height:66px;
+	}
+	.eventtopimage11{
+		margin-top:13px;
+		width:35%;
+		margin-left:6px;
+	}
+	.eventtoptext1{
+		margin-top:-33px;
+		margin-left:51px;
+		font-size:20px;
+	}
+	.eventtopimage22{
+	
+		margin-left: -6px;
+		margin-top: 13px;
+		width: 90%;
+	}
+	.eventcontenttext1{
+		font-size:13px;
+		text-align:center;
+		
+		}
+	.eventcontenttext2{
+		font-size:15px;
+		color:#718497;
+	}
+	/* Contacts,socialmedia,newsletter,locate us, notification header CSS */
+	.schoolheadertop{
+		background-color:#38549B;
+		height:66px;
+		}
+	.schoolheaderimage{
+		width:10%;
+		position:absolute;
+		margin-top:11px;
+	}
+	.schoolheadertext1{
+		margin-top:-45px;
+		margin-left:46px;
+		color:white;
+		font-size:20px;
+	}
+	.schoolheadertext2{
+		text-align:center;
+		margin-top:-30px;
+		color:white;
+		font-size:26px;
+	}
+	/* Contacts */
+	.contactsmain{
+		 height:52px;
+		 background-color:#D2D5D7;
+		 margin-right:7px;
+		 margin-top:26px;
+		 margin-left:7px;
+		 text-align:center;
+		 border-radius:2px;
+	  }
+	.contactsimagetop{
+		height:75px;
+		background-color:#D2D5D7;
+		margin-right:0px;
+		margin-top:11px;
+		margin-left:0px;
+		border-radius:2px;
+	}
+	.contactsimagetop1{
+		 height:75px;
+		 background-color:#D2D5D7;
+		 margin-right:7px;
+		 margin-top:30px;
+		 margin-left:7px;
+		 border-radius:2px;
+	}
+	.contactsimage{
+		width:100%;
+		height:65px;
+		margin-top:5px;
+		margin-left:7px; 
+		border-radius:40px;
+	}
+	/* Social Media */
+	.socialmediamain{
+		width:100%;
+	}
+	.socialmediaimage1{
+		margin-top:15px;
+		}
+	/* LocateUs */
+	locatecontentlabel{
+		width:75%;
+		margin-top:80px;
+	}
+	loctecontenttext1{
+		margin-left:46px;
+		margin-right:46px;
+		margin-top:60px;
+	}
+	locatecontenttext2{
+		float:left;
+		margin-top:-21px;
+		margin-left:-8px;
+	}
+	locatecontentimage{
+		width:19px;
+		margin-left:10px;
+		margin-top:-4px;
+	}
+	rrrr{
+		margin-top:10% !important;
+		
+	}
+
+}
+
+
+
+.firstrowwidth1{
+		width:63.5% !important;
+	}
+.firstrowwidth2{
+	width:36.5% !important; 
+	}	
+.secondrowwidth1{
+	width:41.5% !important;
+	}
+.secondrowwidth2{
+	width:58.5% !important;
+	}	
+.thirdrowwidth1{
+	width:54.5% !important;
+	}
+.thirdrowwidth2{
+	width:45.5% !important;
+	}	
+.footerwidth{
+	width:50%;	
+	}	
+.customheight{
+	width:101%;
+	height:70px;
+	}	
+.customfooter{
+	width:100%;
+	height:40px;
+	}	
+	
+	.ui-listview .ui-li-has-thumb > img:first-child, .ui-listview .ui-li-has-thumb > .ui-btn > img:first-child, .ui-listview .ui-li-has-thumb .ui-li-thumb
+	{
+	
+	left:10px;
+	top:7px;	
+		
+		}
+
+.newslettericons
+{
+	background:url(img1/cbg@2x.png) !important; background-size:contain !important; background-repeat:repeat-x !important; height:65px !important;
+	}		
+.newslettericons img
+{
+  width:20% !important;	
+	}	
+.newslettericons p{
+	margin-top:10px !important; 
+	font-size: 0.85em !important;   
+	}	
+		
+		
+		
+	.ui-listview > .ui-li.newslettericons-has-thumb > .ui-btn, .ui-listview > .ui-li.newslettericons-static.ui-li.newslettericons-has-thumb	
+	{
+		padding-left:5.25em !important;	
+		}
+	
+
+</style>
+</head>
+<body class="app">
+<!--------------------Home 414 to 736---------------->
+<div data-role="page" id="index"  data-title="School Apps">
+    <!-- /header -->
+    <div data-role="header" data-id="persistent"  data-position="fixed">
+        <div style="background-color:#38549b; height:60px; width:100% !important"  >
+          <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
+                Home
+            </span> 
+		</div>
+    </div>
+    <!-- /header -->
+    <!--content--->
+    <div data-role='content'>
+
+        <ul class="rslides" id="slider1">
+            <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/courage@3x.png" ></li>
+            <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/compassion@3x.png" ></li>
+            <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/confidence@3x.png" ></li>
+            <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/creativity@3x.png" ></li>
+        </ul>
+    
+    <div>
+       <div style="background-color:#E9A802 !important; width:100%; height:35px !important;">
+            <img src="yellow/storyboard.png" style=" height:100% !important;"   />
+        </div>
+        
+        <div class="firstrowwidth1" style="float:left;">
+            <a href="#event"><img class="customheight" src="homeicons/upcoming_Events@3x.png" /></a>
+        </div>
+        <div class="firstrowwidth2" style="float:right;">
+            <a href="#contact"><img  class="customheight" src="homeicons/Contacts@3x.png" /></a>
+        </div>
+            
+        <div class="secondrowwidth1" style="float:left;">
+            <a href="#socialmedia"><img class="customheight"  src="homeicons/Facebook@3x.png" /></a>
+        </div>
+        <div class="secondrowwidth2"  style="float:right;">
+            <a href="#newsletter"><img class="customheight"  src="homeicons/Communication@3x.png" /></a>
+        </div>
+        
+        <div  class="thirdrowwidth1"  style="float:left;"  >
+            <a href="#"><img  class="customheight" id="aisclive"  src="homeicons/AISC_Live@3x.png" /></a>
+        </div>
+        <div  class="thirdrowwidth2" style="float:right;">
+            <a href="#"><img class="customheight" id="aiscgallery"  src="homeicons/Photo_gallery@3x.png"   /></a>
+        </div>
+        
+        <div  class="footerwidth" style="float:left;">
+            <a href="#locateus"><img  class="customfooter" id="locateusicon" src="homeicons/LocateUs.png" /></a>
+        </div>
+        <div class="footerwidth" style="float:right;">
+            <a href="#notification" onclick="loadnotificationpage()"><img  class="customfooter" id="notification"  src="homeicons/notification.png" /></a>
+        </div>
+		<div style="clear:both;"></div>
+    </div>
+   </div>
+   	<!-----Content------------->
+</div>
+<!--------------------/Home Page---------------->
+
+<!--------------------EventPage----------------->
+<div  data-role="page" id="event" data-title="School Apps" >
+    <!---header -->
+     <div  data-role="header" data-id="persistent"  data-position="fixed" style="background-color:transparent !important;">
+        <div style="background-color:#38549b; height:60px; width:100% !important"  >
+              <img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:19%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
+                        Events
+                </span> 
+        </div>
+    
+
+            <P class="eventcontenttext1" style="font-weight:normal !important; background-color: transparent !important ;padding-left:15px !important; padding-top:15px !important; padding-bottom:5px !important; padding-right:15px; " >To add Events to your Phones Calender,Select multiple items and Press Add</P>
+
+   </div> 
+   	<!--/header---->
+    <!----content---->
+	<div data-role="content">
+            <div class="example-wrapper" data-iscroll>            
+                <ul id="events_id" data-role="listview"  data-divider="true" >
+                </ul>
+            </div>    
+ 
+    </div>
+    
+    
+</div>
+
+<!-------------------/EventPage----------------->
+
+<!-------------------contactsPage--------------->
+<div  data-role="page" id="contact" data-title="School Apps">
+    <!---header -->
+    <div  data-role="header" data-id="persistent"  data-position="fixed" style="background-color:#38549b !important">
+    <div style="background-color:#38549b; height:60px; width:100% !important"  >
+    			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
+               		Contacts
+                </span> 
+       </div>
+           
+    </div>
+   <!--/header---->
+    <!----content---->
+   <div data-role="content" id="contact_id" class="example-wrapper" data-iscroll>     
+   
+   <!----
+   
+<div class="contactsimagetop examplecolor" style="width:100%; height:50px;">
+	<p style="font-size:15px; vertical-align:central !important; position:relative !important; top:35% !important; text-align:center !important">Main Reception <a style="text-decoration:none !important; color:#000 !important; font-weight:normal ; " href="" >044 - 22549000 </a></p></div>
+<center><div class="contactsimagetop examplecolor" style="width:90%;"><div style="float:left; width:20% !important;">';
+		<img class="contactsimage" src="img/noimageicon.png">
+		<img class="contactsimage" src="'+imagepath+image+'">		
+	</div><div style="float:right;  width:80% !important;">
+    
+	<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">
+    Testing name
+    <br />
+    <a style="text-decoration:none !important; color:#000 !important;  font-weight:normal ; " href="mailto:contactemail" >
+    	testing@gmail.com
+    </a></p></div></div></div></center>
+<center><div class="contactsimagetop examplecolor" style="width:90%;"><div style="float:left; width:20% !important;">';
+		<img class="contactsimage" src="img/noimageicon.png">
+		<img class="contactsimage" src="'+imagepath+image+'">		
+	</div><div style="float:right;  width:80% !important;">
+    
+	<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">
+    Testing name
+    <br />
+    <a style="text-decoration:none !important; color:#000 !important;  font-weight:normal ; " href="mailto:contactemail" >
+    	testing@gmail.com
+    </a></p></div></div></div></center>
+<center><div class="contactsimagetop examplecolor" style="width:90%;"><div style="float:left; width:20% !important;">';
+		<img class="contactsimage" src="img/noimageicon.png">
+		<img class="contactsimage" src="'+imagepath+image+'">		
+	</div><div style="float:right;  width:80% !important;">
+    
+	<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">
+    Testing name
+    <br />
+    <a style="text-decoration:none !important; color:#000 !important;  font-weight:normal ; " href="mailto:contactemail" >
+    	testing@gmail.com
+    </a></p></div></div></div></center>
+    
+   --->
+    
+<!--    <div class="contactsmain examplecolor">
+    	<div style="padding:1px;"><p style="text-align:center !important; vertical-align:middle !important">Main Reception &emsp; 004-22549000</p></div>
+    </div>
+    <div class="contactsimagetop examplecolor" style="width:100%;">
+    	<div style="float:left; width:20% !important;">
+    		<img class="contactsimage" src="images/gallery/baby.png">
+    	</div>
+        <div style="float:right;  width:80% !important;">
+    		<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">Andrew Hoover<br />headofschool@aisch.org</p>
+            </div>
+        </div>
+    </div>
+-->
+   </div> 
+   
+</div>
+<!------------------/contactsPage--------------->
+
+<!-------------------Socialmedia---------------->
+<div  data-role="page" id="socialmedia" data-title="School Apps" style="background-color:#36559E;">
+    <!---header -->
+    <div  data-role="header" data-id="persistent"  data-position="fixed">
+        <div style="background-color:#38549b; height:60px; width:100% !important"  >
+    			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+                <span style="position:absolute !important; font-size:20px !important; left:38% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
+               		Social Media
+                </span> 
+            </div>    
+    </div>
+    <!--/header---->
+    <!----content---->
+   	<div class="socialmediaimage1">
+    	<img class="socialmediamain" id="facebook"  src="social_Images/fb@3x.png" />
+   		<img class="socialmediamain" id="google"  src="social_Images/google@3x.png" />
+        <img class="socialmediamain" id="instagram"  src="social_Images/instagram@3x.png" />
+        <img class="socialmediamain" id="twitter"  src="social_Images/twitter@3x.png" />
+        <img class="socialmediamain" id="youtube"  src="social_Images/youtube@3x.png" />
+    </div>
+   
+</div>
+<!------------------/Socialmedia---------------->
+
+<!------------------Newsletter---------------->
+<div  data-role="page" id="newsletter" data-title="School Apps">
+    <!---header -->
+    <div data-role="header" data-id="persistent"  data-position="fixed">
+         <div style="background-color:#38549b; height:60px; width:100% !important"  >
+            <img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+            <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
+                Newsletters
+            </span> 
+        </div>
+    </div>
+    <!--/header---->
+    <!----content---->
+    <div data-role="content" >
+            <center>
+                <div style="width:75%; padding-top:80px;">
+                    <input placeholder="Enter Your Password" id="getpassword"  form="" class="" />
+                    <br />
+                                    
+
+                	 	<img style="width:19px; float:left !important" src="images/gallery/checkbox1.png" /> <p style="color:#718497; margin-top:0px;float:left !important">&emsp;Remember me</p>
+
+                    
+                    <span style="float:right">
+	                    <a style="color:#1F87F8; text-shadow:none; font-weight:normal !important; text-decoration:none !important; color:#000 !important" onclick="checkuser()">Submit</a>
+                    </span>
+                    
+                </div>
+            </center>
+            
+   	</div>
+   
+</div>
+<!-----------------/Newsletter---------------->
+
+<!------------------Newsletter---------------->
+<div  data-role="page" id="newsletterloggedin" data-title="School Apps" >
+    <!---header -->
+    <div  data-role="header" data-id="persistent"  data-position="fixed">
+    <div style="background-color:#38549b; height:60px; width:100% !important"  >
+    			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
+               		Newsletter
+                </span> 
+           </div>     
+    </div>
+    <!--/header---->
+    
+ <div data-role="content">
+         <div class="example-wrapper" data-iscroll>            
+            <ul id="Newsletter_id" data-role="listview"  data-divider="true" >
+
+
+
+				
+                    <li onclick=loadurl() class="newslettericons" >
+                    		<img  style=" padding-top:1%  ;vertical-align:middle !important"  src="newslettericons/Head@2x.png"  />
+                            <p>Head of High School</p>
+                            <p>
+               	      		<strong style="color:#F00">Andrew Hoover</strong>                             </p>
+                    </li>
+                    <li onclick=loadurl() class="newslettericons">
+                    		<img  style=" padding-top:1%  ;vertical-align:middle !important"  src="newslettericons/e@2x.png" />
+                            <p>Head of High School</p>
+                            <p>
+                         	<strong>Andrew Hoover</strong> </p>
+                         </li>
+
+                    <li onclick=loadurl() class="newslettericons">
+                    		<img  style=" padding-top:1%  ;vertical-align:middle !important"  src="newslettericons/p@2x.png" />
+                            <p>Head of High School</p>
+                            <p>
+                            <strong>Andrew Hoover</strong> </p>
+                         </li>
+
+                    <li onclick=loadurl() class="newslettericons">
+                    		<img  style=" padding-top:1%  ;vertical-align:middle !important"  src="newslettericons/m@2x.png" />
+                            <p>Head of High School</p>
+                            <p>
+                      		<strong>Andrew Hoover</strong> </p>
+                         </li>
+                         
+
+
+			</ul>
+        </div>    
+    </div>
+    
+    <!----content---->
+   
+</div>
+<!-----------------/Newsletter---------------->
+
+
+
+
+
+<!-----------------LocateUs--------------->
+<div data-role="page" id="locateus" data-title="School Apps">
+
+    <!---header -->
+  <div  data-role="header" data-id="persistent"  data-position="fixed">
+    <div style="background-color:#38549b; height:60px; width:100% !important"  >
+    			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
+               		Locate Us
+                </span> 
+             </div>   
+    </div>
+    <!--/header---->
+    <!----content---->
+   	<div style="margin-top:10% !important;">
+            <p style="text-align:center;">American International School<br />
+            100 Feat Road, Taramani<br />
+            Chennai-600 113, India<br />
+            Tel: &ensp;91 44 22549000</p>
+   
+   
+ <script>
+     if(navigator.network.connection.type != Connection.NONE){
+</script>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1147.1983216655128!2d80.24665805295187!3d12.981672347328574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xa9a3700f3f4b67b0!2sAmerican+International+School!5e1!3m2!1sen!2sin!4v1428049841141" width="600" height="450" frameborder="0" style="border:0"></iframe>    
+    <script> }else{  
+	
+	navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
+    
+	}
+    </script> 
+    
+    
+    
+    </div>
+   
+</div>
+<!----------------/LocateUs---------------->
+
+<!----------------Notification---------------->
+<div  data-role="page" id="notification" data-title="School Apps" style="background-color:#1E3869;">
+    <!---header -->
+     <div  data-role="header" data-id="persistent"  data-position="fixed">
+        <div style="background-color:#38549b; height:60px; width:100% !important"  >
+                    <img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+                    <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
+                        Notification
+                    </span> 
+                 </div>   
+    </div>
+    
+     	<div data-role="content" style="margin-top:12px !important;" >	
+        	
+             <div class="example-wrapper" data-iscroll>            
+                <ul id="Notifications_id" data-role="listview"  data-divider  >
+                
+                </ul>
+            </div>    
+
+            
+        </div>
+			    
+    </div>
+    
+    <!---header---->
+</div>
+<!---------------/Notification---------------->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.js"></script>
+<script src="js/responsiveslides.js"></script>
+<script src="js/responsiveslides.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/pushapps.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
+<script type="text/javascript" src="js/SocialSharing.js"></script>
+<script type="text/javascript" src="js/calendar.js"></script>
+
+<script>
+    // You can also use "$(window).load(function() {"
+//	GLOBAL VALUES
+var AppTokenId='abcdefghijklmnopqrstuvwxyz';
+var ajaxpath = 'http://www.safelearners.com/aisc/appajax/';
+var imagepath = 'http://www.safelearners.com/aisc/';
+var event_read_array=[];
+var event_read_list='';
+var imageuri;
+	
+var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000); //will create database Dummy_DB or open it		
+	
+	
+    $(function () {
+
+      // Slideshow 1
+      $("#slider1").responsiveSlides({
+        maxwidth: 800,
+        speed: 800
+      });
+	  
+//  checkConnection();       
+  
+  });
+  
+  
+        // device APIs are available
+ 
+ 
+ </script>
+ 
+ <script >
+  app.initialize();
+ </script>
+ <script>
+ 
+ 
+ 
+function loadcontacts()
+ {
+	 if(navigator.network.connection.type == Connection.NONE)
+	 {
+		 //alert("loadContacsFromLocalDb");
+		loadContactsFromLocalDb(); 
+		 }
+		else{
+			//alert("loadContacsFromserver");
+			loadcontactsfromserver(); 
+			//fetch contacts from online and update in local db 
+			//then call loadcontacts from local db function afgain;	
+		}		 
+	 }
+	 
+	 
+function loadContactsFromLocalDb()
+{
+	//alert("loadContacsFromLocalDb");
+	db.transaction(populateContactDB, errorContactCB, successContactCB);
+	}	 
+
+function populateContactDB(tx) {
+	//alert("loadContacsFromLocalDb  sdfsa asedf asdf");
+tx.executeSql('CREATE TABLE IF NOT EXISTS contacts (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL , contactemail TEXT NOT NULL , imagepath TEXT NOT NULL  , status INTEGER )');
+}
+
+function successContactCB() {
+	db.transaction(queryContactDB,errorContactCB);
+}
+function queryContactDB(tx){
+	var value = '1';
+tx.executeSql('SELECT * FROM contacts where status=? ',[value],queryContactSuccess,errorContactCB);
+}
+
+
+function errorContactCB(err){
+	
+	//alert("ERROR : "+err);
+	}
+
+function queryContactSuccess(tx,result){
+		var length = result.rows.length;
+//		alert('length');
+		var contactappend='';
+			if(length >0)
+			{
+			$('#contact_id').html('');	
+			
+			contactappend+='<center><div class="contactsimagetop examplecolor" style="width:95%; height:50px;">';
+			contactappend+='<p style="font-size:15px; vertical-align:middle !important;position:relative; top:35%;">Main Reception 044 - 22549000 </p></div></center>';
+			
+			
+				for(var i=0; i< length ; i++)
+				{
+					
+		//			alert(result.rows.item(i).name);
+					var name =	result.rows.item(i).name;
+					var	contactemail =result.rows.item(i).contactemail;
+					var image =	result.rows.item(i).imagepath;
+					var status = result.rows.item(i).status; 
+		imageuri =imagepath+image;
+		
+	//	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
+		
+		console.log("Imahe ="+imagepath+image+" Name = "+name +" contact email "+ contactemail +" status = "+ status);
+		
+		contactappend+='<center><div class="contactsimagetop examplecolor" style="width:95%;"><div style="float:left; width:20% !important;">';
+		
+			if((image=='') || (navigator.network.connection.type == Connection.NONE) ){
+				//image = '';
+				contactappend+='<img class="contactsimage" src="img/noimageicon.png">';
+			}else{
+				contactappend+='<img class="contactsimage" src="'+imagepath+image+'">';		
+				}
+		contactappend+='</div><div style="float:right;  width:80% !important;">';
+		contactappend+='<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">'+name+'<br /><a style="text-decoration:none !important; color:#000 !important;  font-weight:normal ; " onclick="gotomail(\''+contactemail+'\')" >'+contactemail+'</a></p></div></div></div></center>';
+		}
+		$('#contact_id').html(contactappend);		
+				
+			}//if close
+			else{
+				//CONNECT TO SERVER
+				 if(navigator.network.connection.type == Connection.NONE){
+						navigator.notification.alert("No contacts available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
+				 }else{
+					loadcontactsfromserver(); 
+					 }
+			}
+}
+
+function loadcontactsfromserver()
+{
+	//alert("loadContacsFromserver  populate");
+	db.transaction(populateContactDB, errorContactCB, successContactCBServer);
+}
+
+
+function deletedata(tx){
+	
+		var value='0';
+		var cond='0';
+        tx.executeSql("UPDATE contacts set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
+	}
+
+function ErrorDeleteCallBack(err){
+//	alert('ERROR FOR DELETE = '+err.message);
+	
+	} 
+function successContactCBServer(){
+//	alert('adasda !!!!');
+	console.log(ajaxpath+'loadcontacts.php?AppTokenId='+AppTokenId);
+	$.support.cors = true;
+	$.ajax({
+	url:ajaxpath+'loadcontacts.php?AppTokenId='+AppTokenId,
+	type:'POST',
+	contentType: "application/json",
+	async: true,
+	dataType: 'json',
+	crossDomain: true,
+	success: function(data)
+	{
+		 
+	db.transaction( function(tx){ deletedata(tx) }, ErrorDeleteCallBack );	
+		
+//		alert(data.status.code);
+			if(data.status.code=='100')
+			{
+			//	alert(data.Response);
+		//		alert('11');
+				var	Response = data.Response;
+		//		alert('14');
+			
+			$.each(Response, function(index, element) {
+				
+				db.transaction( function(tx){ insertContactvalues(tx, element.name, element.contactemail, element.imagepath , element.status )}, ErrorCallBack );	
+			});
+				
+				loadContactsFromLocalDb();
+				
+		}else{
+				navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
+				}	
+	},
+	error: function(e)
+	{
+	   navigator.notification.alert("System error 83014  contact . Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+	}
+	});
+	
+ }
+ 
+ 
+function ErrorCallBack(err){
+	//alert("ERROR :"+err);
+}
+
+
+
+function insertContactvalues(tx,parameter1,parameter2,parameter3,parameter4)
+{
+//	alert('121');
+	//alert(parameter1+'===='+parameter2+'===='+parameter3+'===='+parameter4);
+	
+	tx.executeSql('INSERT INTO contacts(name , contactemail , imagepath , status  ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
+	
+ }
+
+
+/***=========================================================DOWNLOAD FILE SCRIPT=====================================================================================================***/
+	
+ 
+
+          
+		  console.log(" window.requestFileSystem  =   ");
+		  
+		    function fileSystemSuccess(fileSystem) {
+
+               var uri = imageuri; // Get URL
+
+               var download_link = encodeURI(uri);
+
+               var path = download_link,
+               ext = path.substr(path.lastIndexOf('.') + 1); //Get extension of URL
+
+               var folder_name ='aisc_contact';// Get folder name
+               var file_name = 'newimageee'; //Get file name 
+
+               var directoryEntry = fileSystem.root; // to get root path to directory
+               directoryEntry.getDirectory(folder_name, { create: true, exclusive: false }, onDirectorySuccess, onDirectoryFail); // creating folder in sdcard
+               var rootdir = fileSystem.root;
+               var fp = rootdir.fullPath;
+
+
+          fp = fp + "/" + folder_name + "/" + file_name + "." + ext; // fullpath and name of the file which we want to give
+		  
+		  console.log('fp fp fp = '+fp);
+		  
+            // download function call
+            var fileTransfer = new FileTransfer();
+            //File download function with URL and local path
+            fileTransfer.download(download_link, fp,
+                    function (entry) {
+                        alert("download complete: " + entry.fullPath);
+
+                    },
+                 function (error) {
+                     alert("download error source " + error.source);
+                     alert("download error target " + error.target);
+                     alert("upload error code" + error.code);
+
+                 }
+            );
+
+        }
+        function onDirectorySuccess(parent) {
+            //alert(parent);
+        }
+
+        function onDirectoryFail(error) {
+            //Error while creating directory
+            alert("Unable to create new directory: " + error.code);
+        }
+
+        function fileSystemFail(evt) {
+            alert(evt.target.error.code);
+        }	
+	
+/***==============================================================================================================================================================***/
+
+
+
+/******************************************************************************************************************************************************
+	
+	UPCOMING EVENTS CODE BELOW
+
+*******************************************************************************************************************************************************/
+
+function loadupcomingevents()
+ {
+	 if(navigator.network.connection.type == Connection.NONE)
+	 {
+		 //alert("loadupcomingevents local");
+		loadEventsFromLocalDb(); 
+		 }
+		else{
+			//alert("loadupcomingevents server");
+			loadEventsfromserver(); 
+			//fetch contacts from online and update in local db 
+			//then call loadcontacts from local db function afgain;	
+		}		 
+	 }
+	 
+	 
+function loadEventsFromLocalDb()
+{
+	//alert("loadupcomingevents LocalDb");
+	db.transaction(populateEventsDB, errorEventsCB, successEventsCB);
+	}	 
+
+function populateEventsDB(tx) {
+	//alert("loadupcomingevents FromLocalDb  sdfsa asedf asdf");
+tx.executeSql('CREATE TABLE IF NOT EXISTS upcomingevents (id INTEGER PRIMARY KEY AUTOINCREMENT, event_id INTEGER ,eventname TEXT NOT NULL , datetime TEXT NOT NULL , readstatus TEXT NOT NULL , status INTEGER )');
+}
+
+function successEventsCB() {
+	db.transaction(queryEventsDB,errorEventsCB);
+}
+function queryEventsDB(tx){
+	var value ='1';
+tx.executeSql('SELECT * FROM upcomingevents where status=?',[value],queryEventsSuccess,errorEventsCB);
+}
+
+
+function errorEventsCB(err){
+	
+	//alert("ERROR : "+err);
+	}
+
+function queryEventsSuccess(tx,result){
+		var length = result.rows.length;
+		
+		
+		//alert("EVENTS LENGTH  = "+ length);
+		
+		var Eventsappend='';
+			if(length >0)
+			{
+			$('#events_id').html('');	
+				for(var i=0; i< length ; i++)
+				{
+		//	alert(result.rows.item(i).eventname);
+		var eventname =	result.rows.item(i).eventname;
+		var	datetime =result.rows.item(i).datetime;
+		var readstatus = result.rows.item(i).readstatus;
+		var event_id = result.rows.item(i).event_id;
+		
+		console.log("Event name ="+eventname+" datetime  "+datetime +'REaD Statuds = '+readstatus );
+		
+		var value_id = 'event'+event_id;
+		
+		if(readstatus=='1')
+		{
+		Eventsappend+='<li style="padding-left:35px !important; background-color: #ccc !important " onclick="addeventcalendar(\''+value_id+'\')" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
+			}
+		else{	
+		Eventsappend+='<li style="padding-left:35px !important;" onclick="addeventcalendar(\''+value_id+'\')" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
+		}
+		Eventsappend+='<p class="list" style="color:#000;">'+eventname+'</p>';
+		Eventsappend+='<p class="list eventcontenttext2" style="color:#000" ><strong>'+datetime+'</strong></p></li>';
+	
+			}
+			
+			//alert("Eventsappend  "+Eventsappend);
+			
+		$('#events_id').empty().append(Eventsappend);
+		$('#events_id').trigger("create");
+		$('#events_id').listview().listview('refresh');		
+				
+			}//if close
+			else{
+				//CONNECT TO SERVER
+			//	alert(' again reload ');
+				 if(navigator.network.connection.type == Connection.NONE){
+						navigator.notification.alert("No Events available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
+				 }else{
+					loadEventsfromserver(); 
+					 }
+			}
+}
+
+
+
+
+function loadEventsfromserver()
+{
+	//alert("loadEventsFromserver  populate");
+	db.transaction(populateEventsDB, errorEventsCB, successEventsCBServer);
+	
+}
+
+
+function successEventsCBServer(){
+	
+//	alert('adasda !!!!');
+	
+	console.log(ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list);
+	
+	console.log("event_read_list  = "+event_read_list);
+	console.log(" event_read_list arraay length = "+ event_read_array.length );
+	
+	if(event_read_array.length>0)
+	{
+	event_read_list=event_read_array.join(",");
+	}else{
+	event_read_list ='0';
+		}
+	
+	console.log("event_read_list  = "+event_read_list);	
+		
+	
+	$.support.cors = true;
+	$.ajax({
+	url:ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list,
+	type:'POST',
+	contentType: "application/json",
+	async: true,
+	dataType: 'json',
+	crossDomain: true,
+	success: function(data)
+	{
+	
+	deleteEvents_data();	
+//	alert('evennts loaded');
+	//	alert(data.status.code);
+			if(data.status.code=='100')
+			{
+		//		alert(data.Response);
+			//	alert('11');
+				var	Response = data.Response;
+			//	alert('14');
+
+			$.each(Response, function(index, element) {
+				db.transaction( function(tx){ insertEventsvalues(tx, element.event_id, element.eventsname, element.datetime, element.readstatus ,element.status )}, ErrorCallBack );	
+			});
+				loadEventsFromLocalDb();
+				
+		}else{
+				navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
+				}	
+	},
+	error: function(e)
+	{
+	   navigator.notification.alert("System error 83014 events. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+	}
+	});
+ }
+ 
+ 
+function ErrorCallBack(err){
+	//alert("ERROR 11 :"+err.message);
+}
+
+
+function insertEventsvalues(tx,parameter1,parameter4,parameter2,parameter3,parameter5)
+{
+//	alert('122');
+//	alert(parameter1+'===='+parameter4+'======'+parameter2+'===='+parameter3+'====='+parameter5);
+	tx.executeSql('INSERT INTO upcomingevents( event_id, eventname ,datetime , readstatus ,status ) VALUES (?,?,?,?,?)',[parameter1,parameter4,parameter2,parameter3,parameter5]);
+ }
+
+
+
+
+
+
+
+function deleteEvents_data()
+{
+//	alert('aa');
+	
+		var value='1';
+		var cond='0';
+		var readstatusval = '1';
+        
+
+	db.transaction(function(tx){
+				tx.executeSql('SELECT event_id FROM upcomingevents where readstatus=? and status=? ',[readstatusval,value], successSelectEventsCB,errorEventsCB);
+			 },ErrordelteCB);
+			 
+	//		 alert('completed selecrt events');
+			 
+	db.transaction(function(tx){
+				var value='0';
+				var cond='0';
+        		tx.executeSql("UPDATE upcomingevents set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
+		},ErrordeletteCB);	 
+		
+
+	
+	}
+	
+function ErrordeletteCB(err)
+{
+	//alert("Error event delete = "+err.message);
+	
+	} 	
+	
+function ErrordelteCB(err){
+	//alert("ErrordelteCB "+err.message);
+	
+	}
+
+function successSelectEventsCB(tx,result){
+	
+	//alert("Length of rows in table = "+ result.rows.length);
+	  var length = result.rows.length;
+				for(var i=0; i< length ; i++)
+				{
+					//alert("array push ="+result.rows.item(i).event_id);
+					event_read_array.push(result.rows.item(i).event_id);
+ 				}
+		//alert(" Every ");
+	}
+
+
+/******************************************************************************************************************************************************
+	
+	UPCOMING NEWSLETTER CODE BELOW
+
+*******************************************************************************************************************************************************/
+
+function loadupcomingNewsletter()
+ {
+	 if(navigator.network.connection.type == Connection.NONE)
+	 {
+		 //alert("loadupcomingNewsletter local");
+		loadNewsletterFromLocalDb(); 
+		 }
+		else{
+			//alert("loadupcomingNewsletter server");
+			loadNewsletterfromserver(); 
+			//fetch contacts from online and update in local db 
+			//then call loadcontacts from local db function afgain;	
+		}		 
+	 }
+	 
+	 
+function loadNewsletterFromLocalDb()
+{
+	//alert("loadupcomingNewsletter LocalDb");
+	db.transaction(populateNewsletterDB, errorNewsletterCB, successNewsletterCB);
+	}	 
+
+function populateNewsletterDB(tx) {
+	//alert("loadupcomingNewsletter FromLocalDb  sdfsa asedf asdf");
+tx.executeSql('CREATE TABLE IF NOT EXISTS newsletter (id INTEGER PRIMARY KEY AUTOINCREMENT, newsletter_id INTEGER , name TEXT NOT NULL , department TEXT NOT NULL , newsimage TEXT NOT NULL , newsurl TEXT NOT NULL , color TEXT NOT NULL, status INTEGER )');
+}
+
+function successNewsletterCB() {
+	db.transaction(queryNewsletterDB,errorNewsletterCB);
+}
+function queryNewsletterDB(tx){
+	var value ='1';
+tx.executeSql('SELECT * FROM newsletter where status=?',[value],queryNewsletterSuccess,errorNewsletterCB);
+}
+
+
+function errorNewsletterCB(err){
+	
+	//alert("ERROR : "+err);
+	}
+
+function queryNewsletterSuccess(tx,result){
+		var length = result.rows.length;
+		
+		
+		//alert("Newsletter LENGTH  = "+ length);
+		
+		var Newsletterappend='';
+			if(length >0)
+			{
+			$('#Newsletter_id').html('');	
+				for(var i=0; i< length ; i++)
+				{
+			//alert(result.rows.item(i).newsurl);
+			
+		var department =	result.rows.item(i).department;
+		var	name =result.rows.item(i).name;
+		var newsimage = result.rows.item(i).newsimage;
+		var newsurl = result.rows.item(i).newsurl;
+		var color = result.rows.item(i).color;
+		
+		console.log("name ="+name+" department  "+department +'newsimage = '+newsimage +' Newsurl = '+newsurl );
+
+
+Newsletterappend+='<li onclick=loadurl(\''+newsurl+'\') class="newslettericons" >';
+Newsletterappend+='<img  style=" padding-top:1%  ;vertical-align:middle !important"  src="'+imagepath+newsimage+'"  />';
+Newsletterappend+='<p>'+department+'<br />';
+Newsletterappend+='<strong style="color:'+color+'">'+name+'</strong>';                             
+Newsletterappend+='</li>';
+
+
+			}
+			
+			//alert("Newsletterappend  "+Newsletterappend);
+			
+		$('#Newsletter_id').empty().append(Newsletterappend);
+		$('#Newsletter_id').trigger("create");
+		$('#Newsletter_id').listview().listview('refresh');		
+				
+			}//if close
+			else{
+				//CONNECT TO SERVER
+		//		alert(' again reload ');
+				 if(navigator.network.connection.type == Connection.NONE){
+					//	navigator.notification.alert("No Newsletter available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
+				 }else{
+					loadNewsletterfromserver(); 
+					 }
+			}
+}
+
+
+
+
+function loadNewsletterfromserver()
+{
+	//alert("loadNewsletterFromserver  populate");
+	db.transaction(populateNewsletterDB, errorNewsletterCB, successNewsletterCBServer);
+	
+}
+
+
+function successNewsletterCBServer(){
+	
+//	alert('adasda !!!!');
+	
+	console.log(ajaxpath+'loadnewsletter.php?AppTokenId='+AppTokenId);
+		
+	$.support.cors = true;
+	$.ajax({
+	url:ajaxpath+'loadnewsletter.php?AppTokenId='+AppTokenId,
+	type:'POST',
+	contentType: "application/json",
+	async: true,
+	dataType: 'json',
+	crossDomain: true,
+	success: function(data)
+	{
+	
+	deleteNewsletter_data();	
+//	alert('evennts loaded');
+	//	alert(data.status.code);
+			if(data.status.code=='100')
+			{
+		//		alert(data.Response);
+			//	alert('11');
+				var	Response = data.Response;
+			//	alert('14');
+
+			$.each(Response, function(index, element) {
+				db.transaction( function(tx){ insertNewslettervalues(tx, element.newsletter_id, element.name, element.department, element.newsimage, element.newsurl , element.color ,element.status )}, ErrorCallBack );	
+			});
+				loadNewsletterFromLocalDb();
+				
+		}else{
+				navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
+				}	
+	},
+	error: function(e)
+	{
+	   navigator.notification.alert("System error 83014  newsletter. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+	}
+	});
+ }
+ 
+ 
+function ErrorCallBack(err){
+	//alert("ERROR 11 :"+err.message);
+}
+
+
+function insertNewslettervalues(tx,parameter1,parameter2,parameter3,parameter4,parameter5,parameter6,parameter7)
+{
+//	alert('122');
+//	alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4+'====='+parameter5+'====='+parameter6);
+	tx.executeSql('INSERT INTO newsletter( newsletter_id, name ,department ,newsimage, newsurl, color ,status ) VALUES (?,?,?,?,?,?,?)',[parameter1,parameter2,parameter3,parameter4,parameter5,parameter6,parameter7]);
+ }
+
+
+
+
+
+
+
+function deleteNewsletter_data()
+{
+	//alert('aa');
+	
+	db.transaction(function(tx){
+				var value='0';
+				var cond='0';
+        		tx.executeSql("UPDATE newsletter set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
+		},ErrordeletteCB);	 
+		
+	}
+	
+function ErrordeletteCB(err)
+{
+	//alert("Error event delete = "+err.message);
+	
+	} 	
+	
+function ErrordelteCB(err){
+	//alert("ErrordelteCB "+err.message);
+	
+	}
+
+function successSelectNewsletterCB(tx,result){
+	
+	//alert("Length of rows in table = "+ result.rows.length);
+		//alert(" Every ");
+	}
+
+
+
+
+
+
+
+
+
+/******************************************************************************************************************************************************
+	
+	 NOTIFICATIONS CODE BELOW
+
+*******************************************************************************************************************************************************/
+
+function loadnotifications()
+ {
+	 if(navigator.network.connection.type == Connection.NONE)
+	 {
+		 //alert("loadupcomingNotifications local");
+		loadNotificationsFromLocalDb(); 
+		 }
+		else{
+			//alert("loadupcomingNotifications server");
+			loadNotificationsfromserver(); 
+			//fetch contacts from online and update in local db 
+			//then call loadcontacts from local db function afgain;	
+		}		 
+	 }
+	 
+	 
+function loadNotificationsFromLocalDb()
+{
+	//alert("loadupcomingNotifications LocalDb");
+	db.transaction(populateNotificationsDB, errorNotificationsCB, successNotificationsCB);
+	}	 
+
+function populateNotificationsDB(tx) {
+	//alert("loadupcomingNotifications FromLocalDb  sdfsa asedf asdf");
+tx.executeSql('CREATE TABLE IF NOT EXISTS notifications (id INTEGER PRIMARY KEY AUTOINCREMENT, notifications_id INTEGER , notifications TEXT NOT NULL , datetime TEXT NOT NULL , status INTEGER )');
+}
+
+function successNotificationsCB() {
+	db.transaction(queryNotificationsDB,errorNotificationsCB);
+}
+function queryNotificationsDB(tx){
+	var value ='1';
+tx.executeSql('SELECT * FROM notifications where status=? order by id desc',[value],queryNotificationsSuccess,errorNotificationsCB);
+}
+
+
+function errorNotificationsCB(err){
+	
+	//alert("ERROR : "+err);
+	}
+
+function queryNotificationsSuccess(tx,result){
+		var length = result.rows.length;
+		
+		
+	//	alert("Notifications LENGTH  = "+ length);
+		
+		var Notificationsappend='';
+			if(length >0)
+			{
+			$('#Notifications_id').html('');	
+				for(var i=0; i< length ; i++)
+				{
+			//alert(result.rows.item(i).newsurl);
+			
+		var notifications =	result.rows.item(i).notifications;
+		var	datetime =result.rows.item(i).datetime;
+		
+		console.log("notifications ="+notifications+" datetime  "+datetime );
+
+		Notificationsappend+='<li style="padding-left:35px !important;">';
+		Notificationsappend+='<p style="color:#718497;" class="list">'+notifications+'</p>';
+		Notificationsappend+='<p class="eventcontenttext2 lists"><strong>'+datetime+'</strong></p></li>';
+	
+			}
+			
+			//alert("Notificationsappend  "+Notificationsappend);
+			
+		$('#Notifications_id').empty().append(Notificationsappend);
+		$('#Notifications_id').trigger("create");
+		$('#Notifications_id').listview().listview('refresh');		
+				
+			}//if close
+			else{
+				 if(navigator.network.connection.type == Connection.NONE){
+						navigator.notification.alert("No Notifications available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
+				 }else{
+					loadNotificationsfromserver(); 
+					 }
+			}
+}
+
+
+
+
+function loadNotificationsfromserver()
+{
+	db.transaction(populateNotificationsDB, errorNotificationsCB, successNotificationsCBServer);
+}
+
+
+function successNotificationsCBServer(){
+	
+//	alert('adasda !!!!');
+	
+	console.log(ajaxpath+'loadnotifications.php?AppTokenId='+AppTokenId);
+		
+	$.support.cors = true;
+	$.ajax({
+	url:ajaxpath+'loadnotifications.php?AppTokenId='+AppTokenId,
+	type:'POST',
+	contentType: "application/json",
+	async: true,
+	dataType: 'json',
+	crossDomain: true,
+	success: function(data)
+	{
+	
+	deleteNotifications_data();	
+//	alert('evennts loaded');
+	//	alert(data.status.code);
+			if(data.status.code=='100')
+			{
+		//		alert(data.Response);
+		//		alert('11');
+				var	Response = data.Response;
+		//		alert('14');
+
+			$.each(Response, function(index, element) {
+				db.transaction( function(tx){ insertNotificationsvalues(tx, element.notifications_id, element.notification, element.datetime, element.status )}, ErrorCallBack );	
+			});
+				loadNotificationsFromLocalDb();
+				
+		}else{
+				navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
+				}	
+	},
+	error: function(e)
+	{
+	   navigator.notification.alert("System error 83014 notification. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+	}
+	});
+ }
+ 
+ 
+function ErrorCallBack(err){
+	//alert("ERROR 11 :"+err.message);
+}
+
+
+function insertNotificationsvalues(tx,parameter1,parameter2,parameter3,parameter4)
+{
+//	alert('122');
+//	alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4);
+	tx.executeSql('INSERT INTO notifications( notifications_id, notifications ,datetime ,status ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
+ }
+
+
+
+
+
+
+
+function deleteNotifications_data()
+{
+	//alert('aa');
+	
+	db.transaction(function(tx){
+				var value='0';
+				var cond='0';
+        		tx.executeSql("UPDATE notifications set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
+		},ErrordeletteCB);	 
+		
+	}
+	
+function ErrordeletteCB(err)
+{
+	//alert("Error event delete = "+err.message);
+	
+	} 	
+	
+function ErrordelteCB(err){
+	//alert("ErrordelteCB "+err.message);
+	
+	}
+
+function successSelectNotificationsCB(tx,result){
+	
+	//alert("Length of rows in table = "+ result.rows.length);
+		//alert(" Every ");
+	}
+
+
+ /************************************************************************************************************************************************
+	
+	LOAD LINKS CODE BELOW
+
+*******************************************************************************************************************************************************/
+
+function loadlinks()
+ {
+	 if(navigator.network.connection.type == Connection.NONE)
+	 {
+		// alert("loadupcominglinks local");
+		loadlinksFromLocalDb(); 
+		 }
+		else{
+		//	alert("loadupcominglinks server");
+			loadlinksfromserver(); 
+			//fetch contacts from online and update in local db 
+			//then call loadcontacts from local db function afgain;	
+		}		 
+	 }
+	 
+	 
+function loadlinksFromLocalDb()
+{
+	//alert("loadupcominglinks LocalDb");
+	db.transaction(populatelinksDB, errorlinksCB, successlinksCB);
+	}	 
+
+function populatelinksDB(tx) {
+	//alert("loadupcominglinks FromLocalDb  sdfsa asedf asdf");
+tx.executeSql('CREATE TABLE IF NOT EXISTS links (id INTEGER PRIMARY KEY AUTOINCREMENT, links_id INTEGER , links TEXT NOT NULL , linkpage TEXT NOT NULL , status INTEGER )');
+}
+
+function successlinksCB() {
+	db.transaction(querylinksDB,errorlinksCB);
+}
+function querylinksDB(tx){
+	var value ='1';
+tx.executeSql('SELECT * FROM links where status=?',[value],querylinksSuccess,errorlinksCB);
+}
+
+
+function errorlinksCB(err){
+	
+	//alert("ERROR : "+err);
+	}
+
+function querylinksSuccess(tx,result){
+		var length = result.rows.length;
+		
+		
+	//	alert("links LENGTH  = "+ length);
+		
+		var linksappend='';
+			if(length >0)
+			{
+			
+	for(var i=0; i< length ; i++)
+	{
+			//alert(result.rows.item(i).newsurl);
+			
+		var links =	result.rows.item(i).links;
+		var	linkpage =result.rows.item(i).linkpage;
+		
+		console.log("links ="+links+" datetime  "+linkpage );
+		
+		
+		console.log(linkpage+' onclick '+links);
+		
+		
+		$('#'+linkpage).attr('onclick','loadurl(\''+links+'\')' );
+		
+/*		if(linkpage=='facebook')
+		{
+			$('#')
+			
+			}
+		else if(linkpage=='google')
+		{
+			
+			}
+		else if(linkpage=='instagram')
+		{
+
+
+			}
+		else if(linkpage=='twitter')	
+		{}
+		else if(linkpage=='youtube')	
+		{}
+		else if(linkpage=='aisclive')	
+		{}
+		else if(linkpage=='aiscgallery')	
+		{}
+		*/
+			
+				}// for close
+			
+			//alert("linksappend  "+linksappend);
+				
+			}//if close
+			else{
+				 if(navigator.network.connection.type == Connection.NONE){
+						navigator.notification.alert("No links available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
+				 }else{
+					loadlinksfromserver(); 
+					 }
+			}
+}
+
+
+
+
+function loadlinksfromserver()
+{
+	db.transaction(populatelinksDB, errorlinksCB, successlinksCBServer);
+}
+
+
+function successlinksCBServer(){
+	
+//	alert('adasda !!!!');
+	
+	console.log(ajaxpath+'loadlinks.php?AppTokenId='+AppTokenId);
+		
+	$.support.cors = true;
+	$.ajax({
+	url:ajaxpath+'loadlinks.php?AppTokenId='+AppTokenId,
+	type:'POST',
+	contentType: "application/json",
+	async: true,
+	dataType: 'json',
+	crossDomain: true,
+	success: function(data)
+	{
+	
+	deletelinks_data();	
+//	alert('evennts loaded');
+	//	alert(data.status.code);
+			if(data.status.code=='100')
+			{
+		//		alert(data.Response);
+		//		alert('11');
+				var	Response = data.Response;
+		//		alert('14');
+
+			$.each(Response, function(index, element) {
+				db.transaction( function(tx){ insertlinksvalues(tx, element.links_id, element.links, element.linkpage, element.status )}, ErrorCallBack );	
+			});
+				loadlinksFromLocalDb();
+				
+		}else{
+				navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
+				}	
+	},
+	error: function(e)
+	{
+	   navigator.notification.alert("System error 83014 links. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+	}
+	});
+ }
+ 
+ 
+function ErrorCallBack(err){
+	//alert("ERROR 11 :"+err.message);
+}
+
+
+function insertlinksvalues(tx,parameter1,parameter2,parameter3,parameter4)
+{
+//	alert('122');
+//	alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4);
+	tx.executeSql('INSERT INTO links( links_id, links ,linkpage ,status ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
+ }
+
+
+
+
+
+
+
+function deletelinks_data()
+{
+	//alert('aa');
+	
+	db.transaction(function(tx){
+				var value='0';
+				var cond='0';
+        		tx.executeSql("UPDATE links set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
+		},ErrordeletteCB);	 
+		
+	}
+	
+function ErrordeletteCB(err)
+{
+	//alert("Error event delete = "+err.message);
+	
+	} 	
+	
+function ErrordelteCB(err){
+	//alert("ErrordelteCB "+err.message);
+	
+	}
+
+function successSelectlinksCB(tx,result){
+	
+	//alert("Length of rows in table = "+ result.rows.length);
+		//alert(" Every ");
+	}
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  function loadnotificationpage()
+  {
+	  
+	  loadlinks();
+	  
+	  
+	  
+	  }
+  
+  
+  
+  
+function addeventcalendar(event_id)
+{
+	
+var eventtitle = $('#'+event_id).attr('data-value1');
+var datetime = $('#'+event_id).attr('data-value2');
+var readstatus = $('#'+event_id).attr('data-value3');
+
+
+console.log("Event Id = "+event_id+"Event tittle" +eventtitle + "Date time = " + datetime +"Read status =  "+ readstatus );
+
+		var datetime_array = datetime.split(' ');
+		var date_array = datetime_array[0].split('-');
+		var time_array = datetime_array[1].split(':');
+		
+		
+		
+		
+		  // prep some variables
+  var startDate = new Date(date_array[2],date_array[1]-1,date_array[0],time_array[0],time_array[1],0,0,0); // beware: month 0 = january, 11 = december
+  var endDate = new Date(date_array[2],date_array[1]-1,date_array[0],time_array[0],time_array[1],0,0,0);
+  var title = eventtitle;
+  var location = "";
+  var notes = "";
+  var success = function(message) { alert("Success: " + JSON.stringify(message)); };
+  var error = function(message) { alert("Error: " + message); };
+
+
+	
+	window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+	
+	}  
+  
+  
+  
+function gohomepage()
+{
+	$.mobile.changePage('#index');
+	}
+	
+	
+function gotomail(emaillink)
+{
+	var mailid =[];
+	
+	mailid.push(emaillink);
+	
+window.plugins.socialsharing.shareViaEmail(
+  '', // can contain HTML tags, but support on Android is rather limited:  http://stackoverflow.com/questions/15136480/how-to-send-html-content-with-image-through-android-default-email-client
+  '',
+  mailid, // TO: must be null or an array
+  null, // CC: must be null or an array
+  null, // BCC: must be null or an array
+  null // FILES: can be null, a string, or an array
+		);					
+	   
+	
+	
+	}	
+	
+  
+  
+ 
+ function checkuser()
+ {
+	 
+	 var password = $('#getpassword').val();
+	 
+	 
+	// alert("Password = "+ password);
+	 
+ if(navigator.network.connection.type == Connection.NONE){
+	 
+		console.log(' intrenet not working'); 	 
+	 navigator.notification.alert("Yor phone does not currently have an intrenet connection. Please connect and try again.", alertCallback, "AISC", "OK"); 
+ }else{
+	 	 
+		console.log(' password check ajax '); 
+		 
+	 if(password!='' && password!=null)
+	 {
+		 
+		 console.log(ajaxpath+'newsletterpassword.php?AppTokenId='+AppTokenId+'&password='+password);
+						$.support.cors = true;
+						$.ajax({
+						url:ajaxpath+'newsletterpassword.php?AppTokenId='+AppTokenId+'&password='+password,
+						type:'POST',
+						contentType: "application/json",
+						async: true,
+						dataType: 'json',
+						crossDomain: true,
+						success: function(data)
+						{
+						
+					//	deleteNotifications_data();	
+						//	alert('evennts loaded');
+						//	alert(data.status.code);
+							
+								if(data.status.code=='100')
+								{
+									
+								var	Response = data.Response;
+								
+							//	alert("Response===="+Response.passwordStatus);
+								
+								if(Response.passwordStatus=='success')
+								{
+									$.mobile.changePage('#newsletterloggedin');
+	    						  }
+								else{
+									navigator.notification.alert("Password Incorrect", alertCallback, "AISC", "OK");
+									}	
+									
+									
+									}else{
+									navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
+							}	
+						},
+						error: function(e)
+						{
+						   navigator.notification.alert("System error 83014 password. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+						}
+						});
+
+		 
+		 
+		 }else{
+				navigator.notification.alert("Please enter the password", alertCallback, "AISC", "OK"); 
+			 }
+			 
+			 
+      }
+	 
+} 
+ 
+
+
+
+        var iabRef = null;
+	    function iabLoadStart(event) {
+        }
+	   function iabLoadStop(event) {
+		}
+        function iabClose(event) {
+          iabRef.removeEventListener('loadstart', iabLoadStart);
+          iabRef.removeEventListener('loadstop', iabLoadStop);
+          iabRef.removeEventListener('exit', iabClose);
+          iabRef.removeEventListener('share', iabClose);
+		  iabRef.close();
+        }
+        function iabShare(event){
+        }
+        function loadurl(url_link){
+			
+		//	alert(url_link);
+if(navigator.network.connection.type == Connection.NONE)
+	{
+		navigator.notification.alert("Yor phone does not currently have an intrenet connection. Please connect and try again.", alertCallback, "AISC", "OK"); 
+		
+		}
+		else{
+			
+			//alert('urrl  = '+ url_link);
+			iabRef = window.open(url_link, '_blank','toolbarposition=bottom,location=no,presentationstyle=formsheet,closebuttoncaption=Close');//presentationstyle: Set to pagesheet, formsheet or fullscreen 
+			
+						$.support.cors = true;
+			iabRef.addEventListener('exit', iabClose);
+            iabRef.addEventListener('share', iabShare);
+            iabRef.addEventListener('loadstart', iabLoadStart);
+            iabRef.addEventListener('loadstop', iabLoadStop);
+
+			
+			}
+			
+			
+        }
+		
+	function alertCallback(){
+}	
+function browser_setting()
+	{	
+        $(document).bind( 'mobileinit', function(){
+		
+                         $.mobile.loader.prototype.options.text ="";
+                         $.mobile.loader.prototype.options.textVisible = false;
+                         $.mobile.loader.prototype.options.theme ="d";
+                         $.mobile.loader.prototype.options.textonly = false;
+                         $.mobile.loader.prototype.options.html ="<img src='../loader.png'/>";
+                         $.mobile.allowCrossDomainPages = true;
+                         });
+	}
+
+</script>
+</body>
+</html>
