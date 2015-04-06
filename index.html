@@ -1961,7 +1961,7 @@ function compareNotification(){
 	
 	console.log("Notification ===============");
 	
-	if(total_notificationcount < newtotal_notificationcount	)
+	if( (total_notificationcount < newtotal_notificationcount) && total_notificationcount!=0 	)
 	{
 		console.log("statttttt = "+newtotal_notificationcount+"===<>=="+total_notificationcount);
 		$.mobile.changePage('#notification');
