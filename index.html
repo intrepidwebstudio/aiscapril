@@ -2499,11 +2499,11 @@ function successPasswordInsertCB()
 	console.log(" successPasswordInsertCB = "+ $('#getpassword').val() );
 		var new_passwords = $('#getpassword').val();
 		var value='1';
-		db.transaction( function(tx){ insertpasswordvalues(tx,new_paswords,value )}, ErrorCallBackpass );
+		db.transaction( function(tx){ insertpasswordvalues(tx,new_passwords,value) }, ErrorCallBackpass );
  }	
 
 
-function ErrorCallBackpass(){ console.log("ErrorCallBackpass == "); }
+function ErrorCallBackpass(err){ console.log("ErrorCallBackpass == "+ err.message); }
 function insertpasswordvalues(tx,parameter1,parameter2)
 {
 
