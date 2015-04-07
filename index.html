@@ -2464,46 +2464,30 @@ window.plugins.socialsharing.shareViaEmail(
 	
   function loadpassword()
   {
+	  
+	  console.log("Load password = ");
 		db.transaction(populatePasswordDB, errorPasswordCB , successPasswordCB);
 	  }
-  function errorPasswordCB(){
-	  
-	  }
-  function successPasswordCB(){
-	  
-	  } 
- function populatePasswordDB(tx) {
-	tx.executeSql('CREATE TABLE IF NOT EXISTS password (id INTEGER PRIMARY KEY AUTOINCREMENT, passwords TEXT NOT NULL , status INTEGER )');
-}
-function errorPasswordCB(err) {
-	alert(" ERROR Password Db = "+err.message);
-}
-
-function successPasswordCB(){
-	 db.transaction(querysuccessPasswordCB,errorPasswordCB);
-	}
-	
-function querysuccessPasswordCB(tx){
-	tx.executeSql('SELECT * FROM password',[],queryPasswordSuccess,errorPasswordCB);
-}
+ function populatePasswordDB(tx) { tx.executeSql('CREATE TABLE IF NOT EXISTS password (id INTEGER PRIMARY KEY AUTOINCREMENT, passwords TEXT NOT NULL , status INTEGER )'); }
+function errorPasswordCB(err) { 	alert(" ERROR Password Db = "+err.message); }
+function successPasswordCB(){  db.transaction(querysuccessPasswordCB,errorPasswordCB); 	}
+function querysuccessPasswordCB(tx){ tx.executeSql('SELECT * FROM password',[],queryPasswordSuccess,errorPasswordCB); }
 function queryPasswordSuccess(tx,result)
 {
-		  var length = result.rows.length;
-		  
-		 alert("Password Length"); 
-		  if(length>0)
-		  {
-				for(var i=0; i< length ; i++)
-				{
-					console.log(result.rows.item(i).passwords);
-					
-				$('#getpassword').val(result.rows.item(i).passwords);	
-				paswordDbCount=1;	
-					}
-		  }else{
-			  paswordDbCount=0;
-			  }
-	}
+  var length = result.rows.length;
+	 alert("Password Length"); 
+	if(length>0)
+	{
+		for(var i=0; i< length ; i++)
+		{
+			console.log(result.rows.item(i).passwords);
+			$('#getpassword').val(result.rows.item(i).passwords);	
+			paswordDbCount=1;	
+			}
+	}else{
+	  paswordDbCount=0;
+	  }
+}
 
 
 
