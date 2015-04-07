@@ -976,7 +976,7 @@ padding-left:15px !important;
                 <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:19%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                         Events 
                 </span> 
-                <span class="plusicon"><img src="events/plusicon.png"  style="width:20px !important;" /></span>
+                <span class="plusicon" onclick="addeventcalendar()"><img src="events/plusicon.png"  style="width:20px !important;" /></span>
         </div>
     
 
@@ -989,16 +989,55 @@ padding-left:15px !important;
             <div class="example-wrapper" data-iscroll>            
                 <ul id="events_id" data-role="listview"  data-divider="true" >
 
-                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
+                        <li style="padding-left:35px !important;" onclick="addcalenderdata(this)" id="eventevent_id" >
                         <div style="width:90% !important; float:left !important">
                         <p class="list" style="color:#000;">Aisc test event </p>
                         <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p>
                         </div>
-                        <div style="width:10% !important ;float:right !important">
-                        	<img src="events/tick.png" style=" position: relative; top:100%;" /> 
-                        </div>
+                            <div style="width:10% !important ;float:right !important">
+                                <img src="events/tick.png" style=" position: relative; padding-top:50%;width:100%; ; display:none !important" /> 
+                                <input name="eventcheck[]" type="checkbox" value="1" style="display:none !important"  />
+                            </div>
                         
                         </li>
+
+                        <li style="padding-left:35px !important;" onclick="addcalenderdata(this)" id="eventevent_id2" >
+                        <div style="width:90% !important; float:left !important">
+                        <p class="list" style="color:#000;">Aisc test event </p>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p>
+                        </div>
+                            <div style="width:10% !important ;float:right !important">
+                                <img src="events/tick.png" style=" position: relative; padding-top:50%;width:100%; ; display:none !important" /> 
+                                <input name="eventcheck[]" type="checkbox" value="2" style="display:none !important"  />
+                            </div>
+                        
+                        </li>
+
+
+                        <li style="padding-left:35px !important;" onclick="addcalenderdata(this)" id="eventevent_id3" >
+                        <div style="width:90% !important; float:left !important">
+                        <p class="list" style="color:#000;">Aisc test event </p>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p>
+                        </div>
+                            <div style="width:10% !important ;float:right !important">
+                                <img src="events/tick.png" style=" position: relative; padding-top:50%;width:100%; ; display:none !important" /> 
+                                <input name="eventcheck[]" type="checkbox" value="3" style="display:none !important"  />
+                            </div>
+                        
+                        </li>
+                        
+                                                <li style="padding-left:35px !important;" onclick="addcalenderdata(this)" id="eventevent_id4" >
+                        <div style="width:90% !important; float:left !important">
+                        <p class="list" style="color:#000;">Aisc test event </p>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p>
+                        </div>
+                            <div style="width:10% !important ;float:right !important">
+                                <img src="events/tick.png" style=" position: relative; padding-top:50%;width:100%; ; display:none !important" /> 
+                                <input name="eventcheck[]" type="checkbox" value="4" style="display:none !important"  />
+                            </div>
+                        
+                        </li>
+
 
 
 
@@ -1293,6 +1332,9 @@ var imageuri;
 var total_notificationcount=0;	
 var newtotal_notificationcount=0;	
 var currentEventId=0;
+
+var EventCheckValues='';
+
 var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000); //will create database Dummy_DB or open it		
 
 var paswordDbCount=0;
@@ -1589,7 +1631,7 @@ function queryEventsSuccess(tx,result){
 		
 		var value_id = 'event'+event_id;
 		
-		if(readstatus=='1')
+/*		if(readstatus=='1')
 		{
 		Eventsappend+='<li style="padding-left:35px !important; background-color: #ccc !important ;" onclick="addeventcalendar(\''+value_id+'\')" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
 			}
@@ -1598,6 +1640,32 @@ function queryEventsSuccess(tx,result){
 		}
 		Eventsappend+='<p class="list" style="color:#000; font-size: 0.95em !important;  ">'+eventname+'</p>';
 		Eventsappend+='<p class="list eventcontenttext2" style="color:#000" ><strong>'+datetime+'</strong></p></li>';
+*/	
+	
+		if(readstatus=='1')
+		{
+		Eventsappend+='<li style="padding-left:35px !important; background-color: #ccc !important ;" onclick="addcalenderdata(this)" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
+			}
+		else{	
+		Eventsappend+='<li style="padding-left:35px !important;" onclick="addcalenderdata(this)" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
+		}
+
+Eventsappend+='<div style="width:90% !important; float:left !important">';
+Eventsappend+='<p class="list" style="color:#000;">'+eventname+'</p>';
+Eventsappend+='<p class="list eventcontenttext2" style="color:#000" ><strong>'+datetime+'</strong></p></div>';
+Eventsappend+='<div style="width:10% !important ;float:right !important">';
+Eventsappend+='<img src="events/tick.png" style=" position: relative; padding-top:50%; width:100% !important; display:none !important" />';
+Eventsappend+='<input name="eventcheck[]" type="checkbox" style="display:none !important"  value="'+event_id+'" /></div></li>';
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 			}
 			
@@ -2473,36 +2541,73 @@ function updateEventStatus(tx,parameter1,parameter2)
   
   
   
-function addeventcalendar(event_id)
+function addeventcalendar()
 {
 	
-var eventtitle = $('#'+event_id).attr('data-value1');
-var datetime = $('#'+event_id).attr('data-value2');
-var readstatus = $('#'+event_id).attr('data-value3');
+	 EventCheckValues = $('#events_id input:checkbox:checked').map(function () {
+		  return this.value;
+		}).get(); // ["18", "55", "10"]
 
-console.log("Event Id = "+event_id+"Event tittle" +eventtitle + "Date time = " + datetime +"Read status =  "+ readstatus );
-
-currentEventId=event_id;
-
-$('#'+event_id).attr('style', 'background-color:#CCC !important');
-
-savereadstatus();
-
-var datetime_array = datetime.split(' ');
-var date_array = datetime_array[0].split('-');
-var time_array = datetime_array[1].split(':');
+	
+		var selectedEventArray = EventCheckValues.split(',');  
 		
-		  // prep some variables
-  var startDate = new Date(date_array[2],date_array[1]-1,date_array[0],time_array[0],time_array[1],0,0,0); // beware: month 0 = january, 11 = december
-  var endDate = new Date(date_array[2],date_array[1]-1,date_array[0],time_array[0],time_array[1],0,0,0);
-  var title = eventtitle;
-  var location = "";
-  var notes = "";
-  var success = function(message) { alert("Success: " + JSON.stringify(message)); };
-  var error = function(message) { alert("Error: " + message); };
-
-window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
-
+		var event_length=selectedEventArray.length;
+			  
+			 var event_success=0;
+			 var event_fail=0; 
+			 var errormessage='';
+			  
+			if(event_length > 0)
+			{
+				
+			for(var i=0; i< event_length ; i++)
+				{		
+						var event_id = selectedEventArray[i];
+						console.log("Event Id  = " + event_id);
+						var eventtitle = $('#'+event_id).attr('data-value1');
+						var datetime = $('#'+event_id).attr('data-value2');
+						var readstatus = $('#'+event_id).attr('data-value3');
+						
+						console.log("Event Id = "+event_id+"Event tittle" +eventtitle + "Date time = " + datetime +"Read status =  "+ readstatus );
+						currentEventId=event_id;
+						$('#'+event_id).attr('style', 'background-color:#CCC !important');
+						
+						savereadstatus();
+						
+						var datetime_array = datetime.split(' ');
+						var date_array = datetime_array[0].split('-');
+						var time_array = datetime_array[1].split(':');
+						
+						// prep some variables
+						var startDate = new Date(date_array[2],date_array[1]-1,date_array[0],time_array[0],time_array[1],0,0,0); // beware: month 0 = january, 11 = december
+						var endDate = new Date(date_array[2],date_array[1]-1,date_array[0],time_array[0],time_array[1],0,0,0);
+						var title = eventtitle;
+						var location = "";
+						var notes = "";
+						var success = function(message) { event_success =1; };
+						var error = function(message) { event_fail=1 ; errormessage=message };
+						
+						window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+						
+				   }
+				   if(event_fail>0)
+				   {
+					  navigator.notification.alert(message, alertCallback, "AISC", "Done");
+					  
+					   }else{
+						   
+					  navigator.notification.alert(event_length+ "Event(s) added into your iPhone Calendar", alertCallback, "AISC", "Done");	   
+						   }
+				   
+				   
+				   
+				
+				}
+				else{
+					  navigator.notification.alert("Please select atleast one calendar", alertCallback, "AISC", "Done");
+					}  
+			  
+			
 
 	
 	}  
@@ -2738,6 +2843,31 @@ function triggercheckbox()
 		 }
 	
 	}
+
+
+
+function addcalenderdata(g)
+{
+	$('#'+g.id+' img').toggle(function(){
+				
+					if($('#'+g.id+' input').is(':checked'))
+					{
+					  $('#'+g.id+' input').prop('checked', false);
+						}else{
+							
+						$('#'+g.id+' input').prop('checked', true);
+							}
+		});
+	
+	
+	}
+
+function test()
+{
+	
+
+	}	
+	
 
 
 </script>
