@@ -2491,16 +2491,13 @@ var eventtitle = $('#'+event_id).attr('data-value1');
 var datetime = $('#'+event_id).attr('data-value2');
 var readstatus = $('#'+event_id).attr('data-value3');
 
-
-
-
 console.log("Event Id = "+event_id+"Event tittle" +eventtitle + "Date time = " + datetime +"Read status =  "+ readstatus );
-
-
 
 currentEventId=event_id;
 
+$('#id'+event_id).attr('style', 'background-color:#CCC !important');
 
+savereadstatus();
 
 var datetime_array = datetime.split(' ');
 var date_array = datetime_array[0].split('-');
@@ -2517,7 +2514,7 @@ var time_array = datetime_array[1].split(':');
 
 window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
 
-savereadstatus();
+
 	
 	}  
   
