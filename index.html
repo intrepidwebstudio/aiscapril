@@ -896,6 +896,12 @@ padding-left:15px !important;
 		  
 		  }
 	
+	
+	.plusicon{
+	
+			position:absolute; vertical-align:middle; right:4% !important; top:20% !important;	
+		
+		}
 
 </style>
 </head>
@@ -970,7 +976,7 @@ padding-left:15px !important;
                 <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:19%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                         Events 
                 </span> 
-                <span style="position:absolute; vertical-align:middle; right:10px !important;"></span>
+                <span class="plusicon"><img src="events/plusicon.png"  style="width:20px !important;" /></span>
         </div>
     
 
@@ -982,36 +988,19 @@ padding-left:15px !important;
 	<div data-role="content">
             <div class="example-wrapper" data-iscroll>            
                 <ul id="events_id" data-role="listview"  data-divider="true" >
-                <!---
-                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
-                        <p class="list" style="color:#000;">Aisc test event </p>
-                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
 
-                
                         <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
+                        <div style="width:90% !important; float:left !important">
                         <p class="list" style="color:#000;">Aisc test event </p>
-                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p>
+                        </div>
+                        <div style="width:10% !important ;float:right !important">
+                        	<img src="events/tick.png" style=" position: relative; top:100%;" /> 
+                        </div>
+                        
+                        </li>
 
-                
-                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
-                        <p class="list" style="color:#000;">Aisc test event </p>
-                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
 
-                
-                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
-                        <p class="list" style="color:#000;">Aisc test event </p>
-                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
-
-                
-                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
-                        <p class="list" style="color:#000;">Aisc test event </p>
-                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
-
-                
-                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
-                        <p class="list" style="color:#000;">Aisc test event </p>
-                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
-					--->
 
                 </ul>
             </div>    
@@ -1636,7 +1625,7 @@ function queryEventsSuccess(tx,result){
 function loadEventsfromserver()
 {
 	//alert("loadEventsFromserver  populate");
-	db.transaction(populateEventsDB, errorEventsCB, successEventsCBServer);
+	db.transaction(populateEventsDB, errorEventsCB, deleteEvents_data);
 	
 }
 
@@ -1644,15 +1633,9 @@ function loadEventsfromserver()
 function successEventsCBServer(){
 	
 //	alert('adasda !!!!');
-	deleteEvents_data();	
-	//console.log(ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list);
-	
-	//console.log("event_read_list  = "+event_read_list);
-	
 	console.log("event_read_list  = "+event_read_list);	
 	var urlpath=ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list;
 	console.log(urlpath);	
-	
 	$.support.cors = true;
 	$.ajax({
 	url:urlpath,
@@ -1765,6 +1748,9 @@ function successSelectEventsCB(tx,result){
 		event_read_list ='0';
 		}
 
+	
+	console.log(" event_read_list = "+ event_read_list);
+	 successEventsCBServer();
 				
 		//alert(" Every ");
 	}
