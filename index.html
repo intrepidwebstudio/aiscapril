@@ -2462,20 +2462,15 @@ window.plugins.socialsharing.shareViaEmail(
 	
 	}	
 	
-  function loadpassword()
-  {
-	  
-	  console.log("Load password = ");
-		db.transaction(populatePasswordDB, errorPasswordCB , successPasswordCB);
-	  }
- function populatePasswordDB(tx) { tx.executeSql('CREATE TABLE IF NOT EXISTS password (id INTEGER PRIMARY KEY AUTOINCREMENT, passwords TEXT NOT NULL , status INTEGER )'); }
+function loadpassword(){ console.log("Load password = "); db.transaction(populatePasswordDB, errorPasswordCB , successPasswordCB);}
+function populatePasswordDB(tx) { console.log('dd'); tx.executeSql('CREATE TABLE IF NOT EXISTS password (id INTEGER PRIMARY KEY AUTOINCREMENT, passwords TEXT NOT NULL , status INTEGER )'); }
 function errorPasswordCB(err) { 	alert(" ERROR Password Db = "+err.message); }
-function successPasswordCB(){  db.transaction(querysuccessPasswordCB,errorPasswordCB); 	}
-function querysuccessPasswordCB(tx){ tx.executeSql('SELECT * FROM password',[],queryPasswordSuccess,errorPasswordCB); }
+function successPasswordCB(){  console.log('ss'); db.transaction(querysuccessPasswordCB,errorPasswordCB); 	}
+function querysuccessPasswordCB(tx){  console.log('dddddd'); tx.executeSql('SELECT * FROM password',[],queryPasswordSuccess,errorPasswordCB); }
 function queryPasswordSuccess(tx,result)
 {
   var length = result.rows.length;
-	 alert("Password Length"); 
+	 alert("Password Length"+length); 
 	if(length>0)
 	{
 		for(var i=0; i< length ; i++)
@@ -2483,9 +2478,12 @@ function queryPasswordSuccess(tx,result)
 			console.log(result.rows.item(i).passwords);
 			$('#getpassword').val(result.rows.item(i).passwords);	
 			paswordDbCount=1;	
+			 console.log(paswordDbCount);
 			}
 	}else{
 	  paswordDbCount=0;
+	  
+	  console.log(paswordDbCount);
 	  }
 }
 
