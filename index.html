@@ -1359,10 +1359,11 @@ var banner='';
 		phonemodel='6p';
 		}
 	
-	
+	var bannerpath =ajaxpath+'laodbanner.php?AppTokenId='+AppTokenId+'&phonemodel='+phonemodel;
+	console.log(" bannerpath = "+bannerpath); 
 		$.support.cors = true;
 		$.ajax({
-		url:ajaxpath+'laodbanner.php?AppTokenId='+AppTokenId+'&phonemodel='+phonemodel,
+		url:bannerpath,
 		type:'POST',
 		contentType: "application/json",
 		async: true,
@@ -1727,18 +1728,8 @@ Eventsappend+='<div style="width:90% !important; float:left !important">';
 Eventsappend+='<p class="list" style="color:#000;">'+eventname+'</p>';
 Eventsappend+='<p class="list eventcontenttext2" style="color:#000" ><strong>'+datetime+'</strong></p></div>';
 Eventsappend+='<div style="width:10% !important ;float:right !important">';
-Eventsappend+='<img src="events/tick.png" style=" position: relative; padding-top:50%; width:100% !important; display:none !important" />';
+Eventsappend+='<img src="events/tick.png" style=" position: relative; padding-top:50%; width:130% !important; display:none !important" />';
 Eventsappend+='<input name="eventcheck[]" type="checkbox" style="display:none !important"  value="'+event_id+'" /></div></li>';
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 			}
 			
@@ -2593,14 +2584,15 @@ function savereadstatus()
 function successEventReadstatusCB()
 {
 	
-	var new_selected_event_id =currentEventId;
-	
-	var finalid = new_selected_event_id; 
-	
-	console.log(" successEventReadstatusCB = "+ finalid );
-	
 		var value='1';
+	
+	for(var i=0;i<EventCheckValues.length;i++)
+	{	
+		var finalid = EventCheckValues[i]; 
+		console.log(" successEventReadstatusCB = "+ finalid );
+	
 		db.transaction( function(tx){ updateEventStatus(tx,finalid,value) }, ErrorCallBackEventstatus );
+	}
  }	
 
 
@@ -2649,8 +2641,6 @@ function addeventcalendar()
 						currentEventId=event_id;
 						$('#event'+event_id).attr('style', 'background-color:#CCC !important');
 						
-						savereadstatus();
-						
 						var datetime_array = datetime.split(' ');
 						var date_array = datetime_array[0].split('-');
 						var time_array = datetime_array[1].split(':');
@@ -2665,6 +2655,8 @@ function addeventcalendar()
 						var error = function(message) { event_fail=1 ; errormessage=message };
 						
 						window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+					
+					
 						
 				   }
 				   if(event_fail>0)
@@ -2676,9 +2668,7 @@ function addeventcalendar()
 					  navigator.notification.alert(event_length+ "Event(s) added into your iPhone Calendar", alertCallback, "AISC", "Done");	   
 						   }
 				   
-				   
-				   
-				
+				savereadstatus();
 				}
 				else{
 					  navigator.notification.alert("Please select atleast one calendar", alertCallback, "AISC", "Done");
