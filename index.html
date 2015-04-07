@@ -2489,10 +2489,14 @@ function querysuccessPasswordCB(tx){
 function queryPasswordSuccess(tx,result)
 {
 		  var length = result.rows.length;
+		  
+		 alert("Password Length"); 
 		  if(length>0)
 		  {
 				for(var i=0; i< length ; i++)
 				{
+					console.log(result.rows.item(i).passwords);
+					
 				$('#getpassword').val(result.rows.item(i).passwords);	
 				paswordDbCount=1;	
 					}
@@ -2509,11 +2513,12 @@ function savepassword()
 	}
 function successPasswordInsertCB()
 {
+	console.log(" successPasswordInsertCB = "+ $('#getpassword').val() );
 	if($('#getpassword').val()!='')
 	{
-	var new_passwords = $('#getpassword').val();
-	var value='1';
-	db.transaction( function(tx){ insertpasswordvalues(tx,new_paswords,value )}, ErrorCallBack );
+		var new_passwords = $('#getpassword').val();
+		var value='1';
+		db.transaction( function(tx){ insertpasswordvalues(tx,new_paswords,value )}, ErrorCallBack );
 		
 		}
  }	
@@ -2525,11 +2530,11 @@ function insertpasswordvalues(tx,parameter1,parameter2)
 
 	if(paswordDbCount>0)
 	{
-		
+		console.log(' Password Insert = '+parameter1);
 		tx.executeSql("UPDATE password set passwords=? ", [parameter1]);
 	}else{
-		
-		tx.executeSql('INSERT INTO password( passwords, status ) VALUES (?,?)',[parameter1,parameter2]);
+		console.log(' Password Insert = '+parameter1);
+		tx.executeSql('INSERT INTO password (passwords,status) VALUES (?,?)',[parameter1,parameter2]);
 		}
 	loadpassword();
 	}
