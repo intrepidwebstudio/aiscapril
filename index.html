@@ -2469,7 +2469,7 @@ function successEventReadstatusCB()
 	
 	console.log(" successEventReadstatusCB = "+ new_selected_event_id );
 	
-		var value='0';
+		var value='1';
 		db.transaction( function(tx){ updateEventStatus(tx,new_selected_event_id,value) }, ErrorCallBackEventstatus );
  }	
 
