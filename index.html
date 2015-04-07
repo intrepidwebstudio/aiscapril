@@ -2467,10 +2467,12 @@ function successEventReadstatusCB()
 	
 	var new_selected_event_id =currentEventId;
 	
-	console.log(" successEventReadstatusCB = "+ new_selected_event_id );
+	var finalid = new_selected_event_id.substring(5) ; 
+	
+	console.log(" successEventReadstatusCB = "+ finalid );
 	
 		var value='1';
-		db.transaction( function(tx){ updateEventStatus(tx,new_selected_event_id,value) }, ErrorCallBackEventstatus );
+		db.transaction( function(tx){ updateEventStatus(tx,finalid,value) }, ErrorCallBackEventstatus );
  }	
 
 
@@ -2495,7 +2497,7 @@ console.log("Event Id = "+event_id+"Event tittle" +eventtitle + "Date time = " +
 
 currentEventId=event_id;
 
-$('#id'+event_id).attr('style', 'background-color:#CCC !important');
+$('#'+event_id).attr('style', 'background-color:#CCC !important');
 
 savereadstatus();
 
