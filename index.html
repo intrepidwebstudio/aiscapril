@@ -1426,8 +1426,6 @@ function queryContactSuccess(tx,result){
 					var status = result.rows.item(i).status; 
 					imageuri =imagepath+image;
 		
-	//	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
-		
 		//console.log("Imahe ="+imagepath+image+" Name = "+name +" contact email "+ contactemail +" status = "+ status);
 		
 		contactappend+='<center><div class="contactsimagetop examplecolor" style="width:95%;"><div style="float:left; width:20% !important;">';
@@ -1759,9 +1757,11 @@ function successSelectEventsCB(tx,result){
 	  var length = result.rows.length;
 				for(var i=0; i< length ; i++)
 				{
-					//alert("array push ="+result.rows.item(i).event_id);
+					alert("array push ="+result.rows.item(i).event_id);
 					event_read_array.push(result.rows.item(i).event_id);
  				}
+				alert(event_read_array);
+				
 		//alert(" Every ");
 	}
 
