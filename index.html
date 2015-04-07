@@ -970,7 +970,7 @@ padding-left:15px !important;
                 <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:19%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                         Events 
                 </span> 
-                <span style="position:absolute; vertical-align:middle; right:10px !important;">+</span>
+                <span style="position:absolute; vertical-align:middle; right:10px !important;"></span>
         </div>
     
 
@@ -1648,15 +1648,6 @@ function successEventsCBServer(){
 	//console.log(ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list);
 	
 	//console.log("event_read_list  = "+event_read_list);
-	console.log(" event_read_list arraay length = "+ event_read_array.length );
-	
-	if(event_read_array.length>0)
-	{
-		console.log('event added in array');
-	event_read_list=event_read_array.join(",");
-	}else{
-	event_read_list ='0';
-		}
 	
 	console.log("event_read_list  = "+event_read_list);	
 	var urlpath=ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list;
@@ -1762,6 +1753,18 @@ function successSelectEventsCB(tx,result){
 					event_read_array.push(result.rows.item(i).event_id);
  				}
 				alert(event_read_array);
+				
+	
+	
+		console.log(" event_read_list arraay length = "+ event_read_array.length );
+		if(event_read_array.length>0)
+		{
+		console.log('event added in array');
+		event_read_list=event_read_array.join(); 
+		}else{
+		event_read_list ='0';
+		}
+
 				
 		//alert(" Every ");
 	}
