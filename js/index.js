@@ -178,6 +178,7 @@ var app = {
 			loadcontacts();
 			loadupcomingNewsletter();
 			loadnotifications();
+			loadpassword();
 			
 	    }
 };

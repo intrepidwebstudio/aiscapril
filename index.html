@@ -1086,17 +1086,12 @@ ul li.eventlist{
                     <input placeholder="Enter Your Password" type="password" id="getpassword"  form="" class="" />
                     <br />
                 	 	<!--<img style="width:19px; float:left !important" src="images/gallery/checkbox1.png" />-->
-                        <p id="abc" style="color:#718497; margin-top:0px;float:left !important">
-                            <label for="remember_me" class="customlabel">
-                                <input type="checkbox" name="remember_me" />Remember me
-                            </label>
+                        <p style="color:#718497; margin-top:0px;float:left !important">
+                                <input type="checkbox" id="remember_me" name="remember_me" style="float:left; " />
+                                <div onclick="triggercheckbox()" style="float:left;top:-6px; position:relative;left: 35px !important; padding:5px !important;  " >Remember me</div> 
+                                <a style="color:#1F87F8; text-shadow:none; font-weight:normal !important; float:right !important; padding-right:10px !important;  text-decoration:none !important; color:#000 !important" onclick="checkuser()">Submit</a>
                         </p>
-
-                    
-                    <span style="float:right">
-	                    <a style="color:#1F87F8; text-shadow:none; font-weight:normal !important; text-decoration:none !important; color:#000 !important" onclick="checkuser()">Submit</a>
-                    </span>
-                    
+                   
                 </div>
             </center>
             
@@ -1257,6 +1252,9 @@ var imageuri;
 var total_notificationcount=0;	
 var newtotal_notificationcount=0;	
 var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000); //will create database Dummy_DB or open it		
+
+var paswordDbCount=0;
+
   
   function callbanner()
   {
@@ -1352,7 +1350,6 @@ tx.executeSql('SELECT * FROM contacts where status=? ',[value],queryContactSucce
 
 
 function errorContactCB(err){
-	
 	//alert("ERROR : "+err);
 	}
 
@@ -1370,13 +1367,12 @@ function queryContactSuccess(tx,result){
 			
 				for(var i=0; i< length ; i++)
 				{
-					
 		//			alert(result.rows.item(i).name);
 					var name =	result.rows.item(i).name;
 					var	contactemail =result.rows.item(i).contactemail;
 					var image =	result.rows.item(i).imagepath;
 					var status = result.rows.item(i).status; 
-		imageuri =imagepath+image;
+					imageuri =imagepath+image;
 		
 	//	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
 		
@@ -2466,27 +2462,97 @@ window.plugins.socialsharing.shareViaEmail(
 	
 	}	
 	
-  
-  
+  function loadpassword()
+  {
+		db.transaction(populatePasswordDB, errorPasswordCB , successPasswordCB);
+	  }
+  function errorPasswordCB(){
+	  
+	  }
+  function successPasswordCB(){
+	  
+	  } 
+ function populatePasswordDB(tx) {
+	tx.executeSql('CREATE TABLE IF NOT EXISTS password (id INTEGER PRIMARY KEY AUTOINCREMENT, passwords TEXT NOT NULL , status INTEGER )');
+}
+function errorPasswordCB(err) {
+	alert(" ERROR Password Db = "+err.message);
+}
+
+function successPasswordCB(){
+	 db.transaction(querysuccessPasswordCB,errorPasswordCB);
+	}
+	
+function querysuccessPasswordCB(tx){
+	tx.executeSql('SELECT * FROM password',[],queryPasswordSuccess,errorPasswordCB);
+}
+function queryPasswordSuccess(tx,result)
+{
+		  var length = result.rows.length;
+		  if(length>0)
+		  {
+				for(var i=0; i< length ; i++)
+				{
+				$('#getpassword').val(result.rows.item(i).passwords);	
+				paswordDbCount=1;	
+					}
+		  }else{
+			  paswordDbCount=0;
+			  }
+	}
+
+
+
+function savepassword()
+{
+	db.transaction(populatePasswordDB, errorPasswordCB , successPasswordInsertCB);
+	}
+function successPasswordInsertCB()
+{
+	if($('#getpassword').val()!='')
+	{
+	var new_passwords = $('#getpassword').val();
+	var value='1';
+	db.transaction( function(tx){ insertpasswordvalues(tx,new_paswords,value )}, ErrorCallBack );
+		
+		}
+ }	
+
+
+
+function insertpasswordvalues(tx,parameter1,parameter2)
+{
+
+	if(paswordDbCount>0)
+	{
+		
+		tx.executeSql("UPDATE password set passwords=? ", [parameter1]);
+	}else{
+		
+		tx.executeSql('INSERT INTO password( passwords, status ) VALUES (?,?)',[parameter1,parameter2]);
+		}
+	loadpassword();
+	}
+
  
  function checkuser()
  {
-	 
 	 var password = $('#getpassword').val();
-	 
-	 
 	// alert("Password = "+ password);
-	 
  if(navigator.network.connection.type == Connection.NONE){
-	 
 		//console.log(' intrenet not working'); 	 
 	 navigator.notification.alert("Yor phone does not currently have an intrenet connection. Please connect and try again.", alertCallback, "AISC", "OK"); 
  }else{
-	 	 
 		//console.log(' password check ajax '); 
-		 
 	 if(password!='' && password!=null)
 	 {
+		 
+		 if($('#remember_me').is(':checked'))
+		 {
+			 savepassword();
+			 
+			 }
+		 
 		 
 		 //console.log(ajaxpath+'newsletterpassword.php?AppTokenId='+AppTokenId+'&password='+password);
 						$.support.cors = true;
@@ -2500,10 +2566,6 @@ window.plugins.socialsharing.shareViaEmail(
 						success: function(data)
 						{
 						
-					//	deleteNotifications_data();	
-						//	alert('evennts loaded');
-						//	alert(data.status.code);
-							
 								if(data.status.code=='100')
 								{
 									
@@ -2595,8 +2657,26 @@ function browser_setting()
                          $.mobile.loader.prototype.options.textonly = false;
                          $.mobile.loader.prototype.options.html ="<img src='../loader.png'/>";
                          $.mobile.allowCrossDomainPages = true;
-                         });
+                        });
 	}
+
+
+
+function triggercheckbox()
+{
+	 if( $('#remember_me').is(':checked') )
+	 {
+		 
+		 $('#remember_me').trigger('click');
+		 
+	 }else{
+	
+		 $('#remember_me').trigger('click');
+		 
+		 }
+	
+	}
+
 
 </script>
 </body>
