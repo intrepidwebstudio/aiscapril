@@ -1577,7 +1577,7 @@ tx.executeSql('SELECT * FROM upcomingevents where status=?',[value],queryEventsS
 
 function errorEventsCB(err){
 	
-	//alert("ERROR : "+err);
+	alert("ERROR : "+err.message);
 	}
 
 function queryEventsSuccess(tx,result){
@@ -1659,12 +1659,13 @@ function successEventsCBServer(){
 	event_read_list ='0';
 		}
 	
-	//console.log("event_read_list  = "+event_read_list);	
-		
+	console.log("event_read_list  = "+event_read_list);	
+	var urlpath=ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list;
+	console.log(urlpath);	
 	
 	$.support.cors = true;
 	$.ajax({
-	url:ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list,
+	url:urlpath,
 	type:'POST',
 	contentType: "application/json",
 	async: true,
@@ -2453,6 +2454,32 @@ function successSelectlinksCB(tx,result){
 	  
 	  }
   
+
+
+function savereadstatus()
+{
+	console.log("save passwordss");
+	db.transaction(populateEventsDB, errorEventsCB , successEventReadstatusCB);
+	}
+function successEventReadstatusCB()
+{
+	
+	var new_selected_event_id =currentEventId;
+	
+	console.log(" successEventReadstatusCB = "+ new_selected_event_id );
+	
+		var value='0';
+		db.transaction( function(tx){ updateEventStatus(tx,new_selected_event_id,value) }, ErrorCallBackEventstatus );
+ }	
+
+
+function ErrorCallBackEventstatus(err){ console.log("ErrorCallBackpass == "+ err.message); }
+
+function updateEventStatus(tx,parameter1,parameter2)
+{
+	console.log(' upcomingevents update = '+parameter1);
+	tx.executeSql("UPDATE upcomingevents set readstatus=?  where event_id=?", [parameter2,parameter1]);
+	}
   
   
   
@@ -2463,15 +2490,11 @@ var eventtitle = $('#'+event_id).attr('data-value1');
 var datetime = $('#'+event_id).attr('data-value2');
 var readstatus = $('#'+event_id).attr('data-value3');
 
-
 //console.log("Event Id = "+event_id+"Event tittle" +eventtitle + "Date time = " + datetime +"Read status =  "+ readstatus );
 
-		var datetime_array = datetime.split(' ');
-		var date_array = datetime_array[0].split('-');
-		var time_array = datetime_array[1].split(':');
-		
-		
-		
+var datetime_array = datetime.split(' ');
+var date_array = datetime_array[0].split('-');
+var time_array = datetime_array[1].split(':');
 		
 		  // prep some variables
   var startDate = new Date(date_array[2],date_array[1]-1,date_array[0],time_array[0],time_array[1],0,0,0); // beware: month 0 = january, 11 = december
@@ -2482,9 +2505,7 @@ var readstatus = $('#'+event_id).attr('data-value3');
   var success = function(message) { alert("Success: " + JSON.stringify(message)); };
   var error = function(message) { alert("Error: " + message); };
 
-
-	
-	window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
 	
 	}  
   
