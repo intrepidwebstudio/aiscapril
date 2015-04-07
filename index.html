@@ -1380,7 +1380,7 @@ var banner='';
 		//		alert('14');
 		
 		$.each(Response, function(index, element) {
-					banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="'+imagepath+element.img+'" ></li>';
+					banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="'+imagepath+element.imageurl+'" ></li>';
 		});
 			
 		if(banner!='')
@@ -2595,7 +2595,7 @@ function successEventReadstatusCB()
 	
 	var new_selected_event_id =currentEventId;
 	
-	var finalid = new_selected_event_id.substring(5) ; 
+	var finalid = new_selected_event_id; 
 	
 	console.log(" successEventReadstatusCB = "+ finalid );
 	
@@ -2641,13 +2641,13 @@ function addeventcalendar()
 				{		
 						var event_id = EventCheckValues[i];
 						console.log("Event Id  = " + event_id);
-						var eventtitle = $('#'+event_id).attr('data-value1');
-						var datetime = $('#'+event_id).attr('data-value2');
-						var readstatus = $('#'+event_id).attr('data-value3');
+						var eventtitle = $('#event'+event_id).attr('data-value1');
+						var datetime = $('#event'+event_id).attr('data-value2');
+						var readstatus = $('#event'+event_id).attr('data-value3');
 						
 						console.log("Event Id = "+event_id+"Event tittle" +eventtitle + "Date time = " + datetime +"Read status =  "+ readstatus );
 						currentEventId=event_id;
-						$('#'+event_id).attr('style', 'background-color:#CCC !important');
+						$('#event'+event_id).attr('style', 'background-color:#CCC !important');
 						
 						savereadstatus();
 						
