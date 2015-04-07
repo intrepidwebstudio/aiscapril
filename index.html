@@ -1359,7 +1359,7 @@ var banner='';
 		phonemodel='6p';
 		}
 	
-	var bannerpath =ajaxpath+'laodbanner.php?AppTokenId='+AppTokenId+'&phonemodel='+phonemodel;
+	var bannerpath =ajaxpath+'loadbanner.php?AppTokenId='+AppTokenId+'&phonemodel='+phonemodel;
 	console.log(" bannerpath = "+bannerpath); 
 		$.support.cors = true;
 		$.ajax({
@@ -2584,24 +2584,25 @@ function savereadstatus()
 function successEventReadstatusCB()
 {
 	
-		var value='1';
-	
 	for(var i=0;i<EventCheckValues.length;i++)
 	{	
-		var finalid = EventCheckValues[i]; 
-		console.log(" successEventReadstatusCB = "+ finalid );
 	
-		db.transaction( function(tx){ updateEventStatus(tx,finalid,value) }, ErrorCallBackEventstatus );
+		strattransaction(EventCheckValues[i]);
 	}
  }	
 
 
 function ErrorCallBackEventstatus(err){ console.log("ErrorCallBackp savereadstatus == "+ err.message); }
 
+function strattransaction(value_1){
+	var value='1';
+db.transaction( function(tx){ updateEventStatus(tx,value_1,value) }, ErrorCallBackEventstatus );
+}
+
 function updateEventStatus(tx,parameter1,parameter2)
 {
 	console.log(' upcomingevents update = '+parameter1);
-	tx.executeSql("UPDATE upcomingevents set readstatus=?  where event_id=?", [parameter2,parameter1]);
+	tx.executeSql("UPDATE upcomingevents set readstatus=? where event_id=?", [parameter2,parameter1]);
 	}
   
   
