@@ -1304,6 +1304,7 @@ var event_read_list='';
 var imageuri;
 var total_notificationcount=0;	
 var newtotal_notificationcount=0;	
+var currentEventId=0;
 var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000); //will create database Dummy_DB or open it		
 
 var paswordDbCount=0;
@@ -2458,7 +2459,7 @@ function successSelectlinksCB(tx,result){
 
 function savereadstatus()
 {
-	console.log("save passwordss");
+	console.log("save savereadstatus");
 	db.transaction(populateEventsDB, errorEventsCB , successEventReadstatusCB);
 	}
 function successEventReadstatusCB()
@@ -2473,7 +2474,7 @@ function successEventReadstatusCB()
  }	
 
 
-function ErrorCallBackEventstatus(err){ console.log("ErrorCallBackpass == "+ err.message); }
+function ErrorCallBackEventstatus(err){ console.log("ErrorCallBackp savereadstatus == "+ err.message); }
 
 function updateEventStatus(tx,parameter1,parameter2)
 {
@@ -2490,7 +2491,16 @@ var eventtitle = $('#'+event_id).attr('data-value1');
 var datetime = $('#'+event_id).attr('data-value2');
 var readstatus = $('#'+event_id).attr('data-value3');
 
-//console.log("Event Id = "+event_id+"Event tittle" +eventtitle + "Date time = " + datetime +"Read status =  "+ readstatus );
+
+
+
+console.log("Event Id = "+event_id+"Event tittle" +eventtitle + "Date time = " + datetime +"Read status =  "+ readstatus );
+
+
+
+currentEventId=event_id;
+
+
 
 var datetime_array = datetime.split(' ');
 var date_array = datetime_array[0].split('-');
@@ -2506,6 +2516,8 @@ var time_array = datetime_array[1].split(':');
   var error = function(message) { alert("Error: " + message); };
 
 window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+
+savereadstatus();
 	
 	}  
   
