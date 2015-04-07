@@ -63,6 +63,22 @@ ul li.eventlist{
 	
 	/* Home */
 	
+	
+.newslettericons
+{
+background:url(img1/cbg@2x.png) !important; background-size:contain !important; background-repeat:repeat-x !important; height:65px !important;
+}		
+.newslettericons img
+{
+width:20% !important;	
+}	
+.newslettericons p{
+margin-top:10px !important; 
+font-size: 0.85em !important;   
+}	
+
+	
+	
 	.sliderres{
 	
 		height:136px !important;
@@ -243,6 +259,21 @@ ul li.eventlist{
 	/* Home */
 	
 	
+.newslettericons
+{
+background:url(img1/cbg@2x.png) !important; background-size:contain !important; background-repeat:repeat-x !important; height:65px !important;
+}		
+.newslettericons img
+{
+width:20% !important;	
+}	
+.newslettericons p{
+margin-top:10px !important; 
+font-size: 0.85em !important;   
+}	
+
+	
+	
 	.sliderres{
 	
 		height:229px !important;
@@ -420,6 +451,23 @@ ul li.eventlist{
 
 @media (min-device-width: 375px) and (min-device-height: 667px){
 	/* Home */
+	
+	
+	
+.newslettericons
+{
+background:url(img1/cbg@2x.png) !important; background-size:contain !important; background-repeat:repeat-x !important; height:72px !important;
+}		
+.newslettericons img
+{
+width:20% !important;	
+}	
+.newslettericons p{
+margin-top:10px !important; 
+font-size: 0.85em !important;   
+padding-left:10px !important;
+}	
+
 	
 	.sliderres{
 	
@@ -599,6 +647,25 @@ ul li.eventlist{
 
 @media (min-device-width: 414px) and (min-device-height: 736px){
 	/* Home */
+
+
+	
+.newslettericons
+{
+background:url(img1/cbg@2x.png) !important; background-size:contain !important; background-repeat:repeat-x !important; height:77px !important;
+}		
+.newslettericons img
+{
+width:20% !important;	
+}	
+.newslettericons p{
+margin-top:10px !important; 
+font-size: 0.85em !important;   
+padding-left:15px !important;
+}	
+
+
+
 	
 		.sliderres{
 	
@@ -815,18 +882,6 @@ ul li.eventlist{
 		
 		}
 
-.newslettericons
-{
-	background:url(img1/cbg@2x.png) !important; background-size:contain !important; background-repeat:repeat-x !important; height:65px !important;
-	}		
-.newslettericons img
-{
-  width:20% !important;	
-	}	
-.newslettericons p{
-	margin-top:10px !important; 
-	font-size: 0.85em !important;   
-	}	
 		
 		
 		
@@ -1118,10 +1173,8 @@ ul li.eventlist{
             <ul id="Newsletter_id" data-role="listview"  data-divider="true" >
 
 
-
-				
                     <li onclick=loadurl() class="newslettericons" >
-                    		<img  style=" padding-top:1%  ;vertical-align:middle !important"  src="newslettericons/Head@2x.png"  />
+                    		<img  style="padding-top:1%  ;vertical-align:middle !important"  src="newslettericons/Head@2x.png"  />
                             <p>Head of High School</p>
                             <p>
                	      		<strong style="color:#F00">Andrew Hoover</strong>                             </p>
@@ -1966,7 +2019,7 @@ tx.executeSql('SELECT * FROM notifications where status=? order by id desc',[val
 /*
 function localfailcountCB(err)
 {
-	alert("Error localfailcount"+err.message);
+	//alert("Error localfailcount"+err.message);
 	}
 function local_successcountCB(tx,result){
 		newtotal_notificationcount=result.rows.length;
@@ -2121,7 +2174,7 @@ function slectnotificationCB(tx,result){
 		var lengthselected = result.rows.length;
 
 		total_notificationcount=lengthselected;
-		alert('Length selected ====== '+total_notificationcount);
+		//alert('Length selected ====== '+total_notificationcount);
 		//console.log(total_notificationcount);
 		
 	}
@@ -2470,7 +2523,7 @@ function querysuccessPasswordCB(tx){  console.log('dddddd'); tx.executeSql('SELE
 function queryPasswordSuccess(tx,result)
 {
   var length = result.rows.length;
-	 alert("Password Length"+length); 
+	// alert("Password Length"+length); 
 	if(length>0)
 	{
 		for(var i=0; i< length ; i++)
@@ -2478,6 +2531,15 @@ function queryPasswordSuccess(tx,result)
 			console.log(result.rows.item(i).passwords);
 			$('#getpassword').val(result.rows.item(i).passwords);	
 			paswordDbCount=1;	
+													if( $('#remember_me').is(':checked') )
+													{
+													
+													}else{
+													
+													$('#remember_me').trigger('click');
+													
+													}
+													
 			 console.log(paswordDbCount);
 			}
 	}else{
