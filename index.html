@@ -1347,7 +1347,7 @@ var screenwidth=window.screen.width;
 var screenheight=window.screen.height;
 
 var phonemodel=''; 
-
+var banner='';
 		if(screenwidth == 320 && screenheight == 480)
 		{
 		phonemodel='4s';
@@ -1371,8 +1371,6 @@ var phonemodel='';
 		success: function(data)
 		{
 		
-		db.transaction( function(tx){ deletedata(tx) }, ErrorDeleteCallBack );	
-		
 		//		alert(data.status.code);
 		if(data.status.code=='100')
 		{
@@ -1382,11 +1380,21 @@ var phonemodel='';
 		//		alert('14');
 		
 		$.each(Response, function(index, element) {
-			
-			db.transaction( function(tx){ insertContactvalues(tx, element.name, element.contactemail, element.imagepath , element.status )}, ErrorCallBack );	
+					banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="'+imagepath+element.img+'" ></li>';
 		});
 			
-			loadContactsFromLocalDb();
+		if(banner!='')
+		{					
+			$('#slider1').html('');
+			$('#slider1').html(banner);
+			
+			 $("#slider1").responsiveSlides({
+				maxwidth: 800,
+				speed: 800
+			  });
+		}
+			
+
 			
 		}else{
 			navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
@@ -2615,11 +2623,11 @@ function addeventcalendar()
 
 	console.log(EventCheckValues);
 	
-		var selectedEventArray = EventCheckValues.split(',');  
 		
-		console.log(selectedEventArray);
 		
-		var event_length=selectedEventArray.length;
+		console.log(EventCheckValues);
+		
+		var event_length=EventCheckValues.length;
 			  
 			  console.log(event_length);
 			 var event_success=0;
@@ -2631,7 +2639,7 @@ function addeventcalendar()
 				
 			for(var i=0; i< event_length ; i++)
 				{		
-						var event_id = selectedEventArray[i];
+						var event_id = EventCheckValues[i];
 						console.log("Event Id  = " + event_id);
 						var eventtitle = $('#'+event_id).attr('data-value1');
 						var datetime = $('#'+event_id).attr('data-value2');
