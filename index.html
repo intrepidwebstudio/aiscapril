@@ -637,7 +637,6 @@ ul li.eventlist{
 		width:100% !important;
 		min-height:67px !important;
 		max-height:67px !important;
-	
 	}
 	
 	.yellowtext1{
@@ -1084,11 +1083,14 @@ ul li.eventlist{
     <div data-role="content" >
             <center>
                 <div style="width:75%; padding-top:80px;">
-                    <input placeholder="Enter Your Password" id="getpassword"  form="" class="" />
+                    <input placeholder="Enter Your Password" type="password" id="getpassword"  form="" class="" />
                     <br />
-                                    
-
-                	 	<img style="width:19px; float:left !important" src="images/gallery/checkbox1.png" /> <p style="color:#718497; margin-top:0px;float:left !important">&emsp;Remember me</p>
+                	 	<!--<img style="width:19px; float:left !important" src="images/gallery/checkbox1.png" />-->
+                        <p id="abc" style="color:#718497; margin-top:0px;float:left !important">
+                            <label for="remember_me" class="customlabel">
+                                <input type="checkbox" name="remember_me" />Remember me
+                            </label>
+                        </p>
 
                     
                     <span style="float:right">
