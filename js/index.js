@@ -170,6 +170,7 @@ var app = {
               callbanner(); 
             }else{
            		callbannerfromserver();
+				console.log('connectin server');
             }
 			browser_setting();
 			
