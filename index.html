@@ -2491,22 +2491,19 @@ function queryPasswordSuccess(tx,result)
 
 function savepassword()
 {
+	console.log("save passwordss");
 	db.transaction(populatePasswordDB, errorPasswordCB , successPasswordInsertCB);
 	}
 function successPasswordInsertCB()
 {
 	console.log(" successPasswordInsertCB = "+ $('#getpassword').val() );
-	if($('#getpassword').val()!='')
-	{
 		var new_passwords = $('#getpassword').val();
 		var value='1';
-		db.transaction( function(tx){ insertpasswordvalues(tx,new_paswords,value )}, ErrorCallBack );
-		
-		}
+		db.transaction( function(tx){ insertpasswordvalues(tx,new_paswords,value )}, ErrorCallBackpass );
  }	
 
 
-
+function ErrorCallBackpass(){ console.log("ErrorCallBackpass == "); }
 function insertpasswordvalues(tx,parameter1,parameter2)
 {
 
